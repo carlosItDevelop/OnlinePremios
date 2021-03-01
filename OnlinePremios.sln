@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePremio.Mvc", "src\OnlinePremio.Mvc\OnlinePremio.Mvc.csproj", "{C3834403-D8D9-4914-9C45-2F80D0169FC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Infra", "3.Infra", "{EC94715D-CB98-4755-A062-5F61C8E76A4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{1919BB1D-7F20-458F-9CA7-619018527CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePremios.Data", "src\OnlinePremios.Data\OnlinePremios.Data.csproj", "{C1FCB647-DC45-4128-8F04-50C8830E8DFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.UI", "1.UI", "{401FBE4F-6A69-4818-B31F-0A659401F7B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{B496DEAE-0BD3-45B6-8D10-FA666649152E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{3D29EBCF-2E42-4A10-BDD0-6C3D1B087D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePremios.Repository", "src\OnlinePremios.Repository\OnlinePremios.Repository.csproj", "{CA24C473-792C-45E0-BA2B-523F75D13FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePremios.Domain", "src\OnlinePremios.Domain\OnlinePremios.Domain.csproj", "{92B131A6-6D71-42B6-B79B-9E8BF0809F86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3834403-D8D9-4914-9C45-2F80D0169FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3834403-D8D9-4914-9C45-2F80D0169FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3834403-D8D9-4914-9C45-2F80D0169FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3834403-D8D9-4914-9C45-2F80D0169FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FCB647-DC45-4128-8F04-50C8830E8DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FCB647-DC45-4128-8F04-50C8830E8DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FCB647-DC45-4128-8F04-50C8830E8DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FCB647-DC45-4128-8F04-50C8830E8DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA24C473-792C-45E0-BA2B-523F75D13FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA24C473-792C-45E0-BA2B-523F75D13FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA24C473-792C-45E0-BA2B-523F75D13FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA24C473-792C-45E0-BA2B-523F75D13FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B131A6-6D71-42B6-B79B-9E8BF0809F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B131A6-6D71-42B6-B79B-9E8BF0809F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B131A6-6D71-42B6-B79B-9E8BF0809F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B131A6-6D71-42B6-B79B-9E8BF0809F86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3834403-D8D9-4914-9C45-2F80D0169FC3} = {401FBE4F-6A69-4818-B31F-0A659401F7B0}
+		{1919BB1D-7F20-458F-9CA7-619018527CD1} = {EC94715D-CB98-4755-A062-5F61C8E76A4B}
+		{C1FCB647-DC45-4128-8F04-50C8830E8DFE} = {1919BB1D-7F20-458F-9CA7-619018527CD1}
+		{3D29EBCF-2E42-4A10-BDD0-6C3D1B087D40} = {EC94715D-CB98-4755-A062-5F61C8E76A4B}
+		{CA24C473-792C-45E0-BA2B-523F75D13FF6} = {3D29EBCF-2E42-4A10-BDD0-6C3D1B087D40}
+		{92B131A6-6D71-42B6-B79B-9E8BF0809F86} = {B496DEAE-0BD3-45B6-8D10-FA666649152E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AADE49CB-552B-4380-8EAD-60FE9FF5B9C8}
+	EndGlobalSection
+EndGlobal
