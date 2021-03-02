@@ -12,9 +12,7 @@ namespace OnlinePremios.Domain.Core
             this.Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
-
-        //    // Pra eu por este dado aqui eu preciso por no mapeamento de Paciente para PacienteViewModel;
-        //    //public DateTime DataCadastro { get; set; } = DateTime.Now;
+        public DateTime DataCadastro { get; set; } = DateTime.Now;
 
         public override bool Equals(object obj)
         {
