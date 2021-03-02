@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnlinePremios.Data\OnlinePremios.Data.csproj" />
     <ProjectReference Include="..\OnlinePremios.Domain\OnlinePremios.Domain.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Core;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace OnlinePremios.Repository.Base
     public abstract class RepositoryGeneric<TEntity, TKey> : IDomainGenericRepository<TEntity, TKey>
         where TEntity : EntityBase, new()
     {
-        protected DbContext _context;
+        protected OnlinePremiosContext _context;
         //protected DbSet<TEntity> DbSet;
 
-        protected RepositoryGeneric(DbContext ctx) // Precisa receber o contexto, pois como uma classe abstrata não pode ser instanciada, apenas herdada. (Guarde essa info)
+        protected RepositoryGeneric(OnlinePremiosContext ctx) // Precisa receber o contexto, pois como uma classe abstrata não pode ser instanciada, apenas herdada. (Guarde essa info)
         {
             this._context = ctx;
             //this.DbSet = _context.Set<TEntity>();
