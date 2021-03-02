@@ -6,4 +6,6 @@
 
 -[ ] Criar entidades
 
+[Na entidade Sorteio] Adicionar o Campo para Valor do Sorteio, e outro para Observações
+
  
