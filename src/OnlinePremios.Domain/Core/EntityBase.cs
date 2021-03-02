@@ -13,6 +13,8 @@ namespace OnlinePremios.Domain.Core
         }
         public Guid Id { get; set; }
         public DateTime DataCadastro { get; set; } = DateTime.Now;
+        public DateTime? DataAtualizacao { get; set; }
+        public Guid? UserUpdate { get; set; }
 
         public override bool Equals(object obj)
         {
