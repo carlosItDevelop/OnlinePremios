@@ -17,17 +17,19 @@ namespace OnlinePremios.Data.Orm
         public DbSet<Sorteio> Sorteio { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // onde não tiver setado varchar e a propriedade for 
             // do tipo string fica valendo varchar(100)
 
-            foreach (var property in builder.Model.GetEntityTypes()
+            foreach (var property in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetProperties()
                     .Where(p => p.ClrType == typeof(string))))
             {
-                //property.SetColumnType("varchar(90)");                
+                property.SetColumnType("varchar(90)");  // Ok: Faltava instalar o Microsoft.EntityFrameworkCore.Relational
+                //property.Relational().ColumnType = "varchar(100)"; Até ANC2.x
             }
+
         }
 
     }
