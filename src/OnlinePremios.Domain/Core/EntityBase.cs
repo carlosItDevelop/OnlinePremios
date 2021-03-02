@@ -12,7 +12,7 @@ namespace OnlinePremios.Domain.Core
             this.Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
-        public DateTime DataCadastro { get; set; } = DateTime.Now;
+        public DateTime? DataCadastro { get; set; } = DateTime.Now;
         public DateTime? DataAtualizacao { get; set; }
         public Guid? UserUpdate { get; set; }
 
