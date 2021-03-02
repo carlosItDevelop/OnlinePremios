@@ -6,4 +6,17 @@
 
 -[ ] Criar entidades
 
+[Criar Enum para Status do Sorteio]
+namespace OnlinePremios.Domain.Enums
+{
+    public enum StatusSorteio
+    {
+            Cancelado = 1,
+            Finalizado,
+            Iniciado,
+            Paralisado,
+            Proposto
+        
+    }
+}
  
