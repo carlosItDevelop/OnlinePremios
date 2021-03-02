@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Base\" />
-    <Folder Include="Interfaces\Base\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
