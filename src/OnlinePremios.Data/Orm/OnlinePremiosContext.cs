@@ -30,6 +30,12 @@ namespace OnlinePremios.Data.Orm
                 //property.Relational().ColumnType = "varchar(100)"; Até ANC2.x
             }
 
+            // Posso pegar arquivo por arquivo ou usar a implementação Impl033;
+            //modelBuilder.ApplyConfiguration(new PacienteMap());
+            // Impl033: Busca os Mapppings de uma vez só
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(OnlinePremiosContext).Assembly);
+
+
         }
 
     }
