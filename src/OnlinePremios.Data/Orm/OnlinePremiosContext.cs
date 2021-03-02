@@ -15,6 +15,7 @@ namespace OnlinePremios.Data.Orm
 
         public DbSet<Compra> Compra { get; set; }
         public DbSet<Sorteio> Sorteio { get; set; }
+        public DbSet<Cota> Cota { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
