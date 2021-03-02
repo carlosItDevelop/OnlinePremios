@@ -1,7 +1,5 @@
 ﻿using OnlinePremios.Domain.Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlinePremios.Domain.Entities
 {
@@ -11,7 +9,7 @@ namespace OnlinePremios.Domain.Entities
         protected Compra(Guid compradorId, DateTime dataCompra, int qtdeCotas, int status)
         {
 
-            // Validar id != null, dataValida e qtde > 0;
+            // Todo: Validar id != null, dataValida e qtde > 0;
 
             this.CompradorId = compradorId;
             this.DataCompra = dataCompra;
