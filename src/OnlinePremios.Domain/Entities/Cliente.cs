@@ -12,11 +12,13 @@ namespace OnlinePremios.Domain.Entities
         {
             // Validar
             this.Nome = nome;
+            // Setar StatusCliente automaticamente
         }
 
         public string Nome { get; private set; }
         public CPF Cpf { get; private set; }
         public EMAIL Email { get; private set; }
+        public string StatusCliente { get; set; }
 
         // Adicionar AdHocks para CPF e EMAIL;
 
