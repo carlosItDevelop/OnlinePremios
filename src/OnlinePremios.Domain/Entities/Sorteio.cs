@@ -5,7 +5,8 @@ namespace OnlinePremios.Domain.Entities
 {
     public class Sorteio : EntityBase
     {
-        protected Sorteio(int numero, DateTime dataInicial, DateTime dataSorteio, int qtdeCotas, int status)
+        protected Sorteio(int numero, DateTime dataInicial, 
+            DateTime dataSorteio, int qtdeCotas, int status)
         {
             this.Numero = numero;
             this.DataInicial = dataInicial;
@@ -18,6 +19,9 @@ namespace OnlinePremios.Domain.Entities
         public DateTime DataInicial { get; private set; }
         public DateTime DataSorteio { get; private set; }
         public int QtdeCotas { get; private set; }
-        public int StatusSorteio { get; set; } // Criar Enum com Description
+        public int StatusSorteio { get; set; }
+
+        public Guid GaleriaId { get; set; }
+        public virtual Galeria Galeria { get; set; }
     }
 }
