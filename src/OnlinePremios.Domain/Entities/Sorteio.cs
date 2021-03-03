@@ -11,13 +11,13 @@ namespace OnlinePremios.Domain.Entities
             this.DataInicial = dataInicial;
             this.DataSorteio = dataSorteio;
             this.QtdeCotas = qtdeCotas;
-            this.Status = status;
+            this.StatusSorteio = status;
         }
 
         public int Numero { get; private set; }
         public DateTime DataInicial { get; private set; }
         public DateTime DataSorteio { get; private set; }
         public int QtdeCotas { get; private set; }
-        public int Status { get; set; } // Criar Enum com Description
+        public int StatusSorteio { get; set; } // Criar Enum com Description
     }
 }

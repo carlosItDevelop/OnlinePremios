@@ -22,6 +22,20 @@ namespace OnlinePremios.Repository.Base
             //this.DbSet = _context.Set<TEntity>();
         }
 
+        public async Task<TEntity> SelecionarPorId(TKey id)
+        {
+            return await _context.Set<TEntity>().FindAsync(id);
+        }
+
+        public async Task<IEnumerable<TEntity>> SelecionarTodos(Expression<Func<TEntity, bool>> expressaowhere = null)
+        {
+            if (expressaowhere == null)
+            {
+                return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
+            }
+            return await _context.Set<TEntity>().AsNoTracking().Where(expressaowhere).ToListAsync();
+        }
+
         public virtual async Task Atualizar(TEntity obj)
         {
             _context.Entry(obj).State = EntityState.Modified;
@@ -51,21 +65,6 @@ namespace OnlinePremios.Repository.Base
             _context.Set<TEntity>().Add(obj);
             await Salvar();
         }
-
-        public async Task<TEntity> SelecionarPorId(TKey id)
-        {
-            return await _context.Set<TEntity>().FindAsync(id);
-        }
-
-        public async Task<IEnumerable<TEntity>> SelecionarTodos(Expression<Func<TEntity, bool>> expressaowhere = null)
-        {
-            if (expressaowhere == null)
-            {
-                return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
-            }
-            return await _context.Set<TEntity>().AsNoTracking().Where(expressaowhere).ToListAsync();
-        }
-
 
         public void Dispose()
         {
