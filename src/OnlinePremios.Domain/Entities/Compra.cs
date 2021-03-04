@@ -12,20 +12,22 @@ namespace OnlinePremios.Domain.Entities
         {
 
             // Todo: Validar id != null, dataValida e qtde > 0;
-            // Setar StatusCompra
 
             this.ClienteId = clienteId;
             this.DataCompra = dataCompra;
             this.QtdeCotas = qtdeCotas;
             this.Cotas = new List<Cota>();
+            this.StatusCompra = StatusCompra.AguardandoPagamento;
         }
 
-        public Guid ClienteId { get; private set; }
         public DateTime DataCompra { get; private set; }
         public int QtdeCotas { get; set; }
-        public StatusCompra StatusCompra { get; set; } // Todo: Transformar em Enum e usar Description
+        public StatusCompra StatusCompra { get; set; } 
 
         public virtual ICollection<Cota> Cotas { get; set; }
+
+        public Guid ClienteId { get; private set; }
+        public virtual Cliente Cliente { get; set; }
 
     }
 }
