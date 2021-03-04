@@ -1,5 +1,4 @@
 ﻿using OnlinePremios.Domain.Core;
-using OnlinePremios.Domain.Enum;
 using System;
 
 namespace OnlinePremios.Domain.Entities
@@ -14,7 +13,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         public int Numero { get; private set; }
-        public StatusCota StatusCota { get; private set; }
+        public int StatusCota { get; private set; }
         public Guid CompraId { get; set; }
         public virtual Compra Compra { get; private set; }
 
