@@ -25,7 +25,7 @@ namespace OnlinePremio.Mvc.ViewModels
         public StatusCompra StatusCompra { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [Display(Name = "ID")]
+        [Display(Name = "Cliente ID")]
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; set; }
 
