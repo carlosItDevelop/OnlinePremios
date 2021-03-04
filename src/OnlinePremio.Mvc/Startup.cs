@@ -23,7 +23,7 @@ namespace OnlinePremio.Mvc
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
                 .AddEnvironmentVariables();
-            if (env.IsProduction())
+            if (env.IsProduction()) // Todo: Considerar usar IsDevelopment
             {
                 builder.AddUserSecrets<Startup>();
             }
@@ -31,7 +31,7 @@ namespace OnlinePremio.Mvc
             Configuration = builder.Build();
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
