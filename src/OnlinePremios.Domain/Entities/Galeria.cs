@@ -13,6 +13,6 @@ namespace OnlinePremios.Domain.Entities
 
         public Guid SorteioId { get; private set; }
         public virtual Sorteio Sorteio { get; set; }
-        public virtual ICollection<Produto> Produtos { get; set; }
+        public virtual IEnumerable<Produto> Produtos { get; set; }
     }
 }
