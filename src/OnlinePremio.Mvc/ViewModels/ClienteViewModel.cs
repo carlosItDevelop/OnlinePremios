@@ -18,6 +18,17 @@ namespace OnlinePremio.Mvc.ViewModels
         [Key]
         public Guid Id { get; set; }
 
+        [Display(Name = "Data do Cadastro")]
+        public DateTime? DataCadastro { get; set; }
+        [Display(Name = "Data de Atualização")]
+        public DateTime? DataAtualizacao { get; set; }
+        [Display(Name = "Usuário da Atualização")]
+        public Guid? UserUpdate { get; set; }
+
+        // =================================
+
+
+
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [StringLength(120, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 2)]
         public string Nome { get; set; }
