@@ -1,33 +1,31 @@
 ﻿using OnlinePremios.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace OnlinePremios.Domain.Notifications
 {
     public class Notificator : INotificator
     {
-        private List<Notification> _notificacoes;
+        private List<Notification> _notifications;
 
         public Notificator()
         {
-            _notificacoes = new List<Notification>();
+            _notifications = new List<Notification>();
         }
 
         public void Handle(Notification notificacao)
         {
-            _notificacoes.Add(notificacao);
+            _notifications.Add(notificacao);
         }
 
         public List<Notification> GetNotifications()
         {
-            return _notificacoes;
+            return _notifications;
         }
 
         public bool HasNotification()
         {
-            return _notificacoes.Any();
+            return _notifications.Any();
         }
     }
 }
