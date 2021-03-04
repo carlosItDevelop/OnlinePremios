@@ -14,12 +14,12 @@ namespace OnlinePremios.Repository.Base
         where TEntity : EntityBase, new()
     {
         protected OnlinePremiosContext _context;
-        //protected DbSet<TEntity> DbSet;
 
-        protected RepositoryGeneric(OnlinePremiosContext ctx) // Precisa receber o contexto, pois como uma classe abstrata não pode ser instanciada, apenas herdada. (Guarde essa info)
+        // Precisa receber o contexto, pois como uma classe 
+        // abstrata não pode ser instanciada, apenas herdada.
+        protected RepositoryGeneric(OnlinePremiosContext ctx) 
         {
             this._context = ctx;
-            //this.DbSet = _context.Set<TEntity>();
         }
 
         public async Task<TEntity> SelecionarPorId(TKey id)
@@ -43,7 +43,6 @@ namespace OnlinePremios.Repository.Base
         }
 
 
-        // Todo: Está aqui apenas para comparação do ExcluirPorId
         //public virtual async Task Excluir(TEntity obj)
         //{
         //    _context.Entry(obj).State = EntityState.Deleted;
@@ -52,10 +51,8 @@ namespace OnlinePremios.Repository.Base
 
         public virtual async Task ExcluirPorId(TKey id)
         {
-            // Todo: Está aqui apenas para comparação do ExcluirPorId
             //TEntity obj = await SelecionarPorId(id);
             //await Excluir(obj);
-
 
             _context.Set<TEntity>().Remove(new TEntity { Id = Guid.Parse(id.ToString()) });
             await Salvar();
