@@ -28,7 +28,8 @@ namespace OnlinePremios.Domain.Services
             _notificator.Handle(new Notification(mensagem));
         }
 
-        protected bool ExecutarValidacao<TV, TE>(TV validacao, TE entidade) where TV : AbstractValidator<TE> where TE : EntityBase
+        protected bool ExecutarValidacao<TV, TE>(TV validacao, TE entidade) 
+            where TV : AbstractValidator<TE> where TE : EntityBase
         {
             var validator = validacao.Validate(entidade);
 
