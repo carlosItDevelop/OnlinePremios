@@ -24,10 +24,10 @@ namespace OnlinePremios.Domain.Entities
         public int QtdeCotas { get; set; }
         public StatusCompra StatusCompra { get; set; } 
 
-        public virtual ICollection<Cota> Cotas { get; set; }
-
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; set; }
+
+        public virtual ICollection<Cota> Cotas { get; set; }
 
     }
 }

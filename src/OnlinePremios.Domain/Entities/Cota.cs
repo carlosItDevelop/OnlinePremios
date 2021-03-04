@@ -18,7 +18,8 @@ namespace OnlinePremios.Domain.Entities
         public decimal Valor { get; private set; }
         public StatusCota StatusCota { get; private set; }
         public Guid CompraId { get; private set; }
-        public virtual Compra Compra { get; private set; }
+
+        public virtual Compra Compra { get; set; }
 
     }
 }
