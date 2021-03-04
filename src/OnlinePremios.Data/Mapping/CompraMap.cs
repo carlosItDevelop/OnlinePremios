@@ -14,6 +14,7 @@ namespace OnlinePremios.Data.Mapping
                 .HasColumnName("DataCompra").IsRequired();
             builder.Property(x => x.ClienteId).IsRequired().HasColumnName("ClienteId");
             builder.Property(x => x.StatusCompra).IsRequired().HasColumnName("StatusCompra");
+            builder.Property(x=>x.QtdeCotas).HasColumnName("QtdeCotas").IsRequired()
 
             // 1:N Cotas
             builder.HasMany(x => x.Cotas)
