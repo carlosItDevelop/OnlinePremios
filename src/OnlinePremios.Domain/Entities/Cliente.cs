@@ -1,9 +1,5 @@
 ﻿using OnlinePremios.Domain.Core;
 using OnlinePremios.Domain.Enum;
-using OnlinePremios.Domain.ValueObject;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlinePremios.Domain.Entities
 {
@@ -13,16 +9,13 @@ namespace OnlinePremios.Domain.Entities
         {
             // Validar
             this.Nome = nome;
-            // Setar StatusCliente automaticamente
+            this.StatusCliente = StatusCliente.Ativo;
         }
 
         public string Nome { get; private set; }
-        public CPF Cpf { get; private set; }
-        public EMAIL Email { get; private set; }
+        public string Cpf { get; private set; }
+        public string Email { get; private set; }
         public StatusCliente StatusCliente { get; set; }
-
-        // Adicionar AdHocks para CPF e EMAIL;
-
 
     }
 }
