@@ -18,7 +18,7 @@ namespace OnlinePremios.Domain.Entities
         public string Nome { get; private set; }
         public CPF Cpf { get; private set; }
         public EMAIL Email { get; private set; }
-        public string StatusCliente { get; set; }
+        public int StatusCliente { get; set; }
 
         // Adicionar AdHocks para CPF e EMAIL;
 
