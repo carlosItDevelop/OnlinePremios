@@ -41,7 +41,7 @@ namespace OnlinePremio.Mvc.ViewModels
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Display(Name = "Galeria ID")]
-        public Guid GaleriaId { get; set; }
+        public Guid GaleriaId { get; set; }  // Todo: Avaliar este campo, pois tb tem em produto
 
         public virtual Galeria Galeria { get; set; }
 
