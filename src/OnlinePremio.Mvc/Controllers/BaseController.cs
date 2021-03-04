@@ -12,9 +12,9 @@ namespace OnlinePremio.Mvc.Controllers
             _notificator = notificator;
         }
 
-        //protected bool OperacaoValida()
-        //{
-        //    return !_notificator.GetNotifications();
-        //}
+        protected bool OperacaoValida()
+        {
+            return !_notificator.GetNotifications();
+        }
     }
 }

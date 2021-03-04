@@ -13,9 +13,9 @@ namespace OnlinePremios.Domain.Notifications
             _notifications = new List<Notification>();
         }
 
-        public void Handle(Notification notificacao)
+        public void Handle(Notification Notification)
         {
-            _notifications.Add(notificacao);
+            _notifications.Add(Notification);
         }
 
         public List<Notification> GetNotifications()
