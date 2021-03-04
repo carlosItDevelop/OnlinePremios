@@ -14,7 +14,8 @@ namespace OnlinePremio.Mvc.Controllers
 
         protected bool OperacaoValida()
         {
-            return !_notificator.GetNotifications();
+            //return !_notificator.GetNotifications();
+            return false; // Todo: Só para compilar, pois a linha de cima está com erro
         }
     }
 }
