@@ -9,7 +9,16 @@ namespace OnlinePremios.Data.Mapping
     {
         public void Configure(EntityTypeBuilder<Compra> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.DataCompra)
+                .HasColumnName("DataCompra").IsRequired();
+            builder.Property(x => x.ClienteId).IsRequired().HasColumnName("ClienteId");
+            builder.Property(x => x.StatusCompra).IsRequired().HasColumnName("StatusCompra");
+
+            // 1:N Cotas
+            builder.HasMany(x => x.Cotas)
+                .WithOne(x => x.Compra)
+                .HasForeignKey(x => x.CompraId);
         }
     }
 }
