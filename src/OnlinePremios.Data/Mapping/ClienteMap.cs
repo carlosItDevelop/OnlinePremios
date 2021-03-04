@@ -15,6 +15,9 @@ namespace OnlinePremios.Data.Mapping
             builder.Property(x => x.Email).HasMaxLength(255).HasColumnName("Email").IsRequired();
 
             builder.Property(x => x.StatusCliente).HasColumnName("StatusCliente").IsRequired();
+            builder.ToTable("Cliente");
+
+            // Relacionamento
 
         }
     }
