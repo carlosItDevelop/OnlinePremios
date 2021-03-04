@@ -1,4 +1,5 @@
 ﻿using OnlinePremios.Domain.Core;
+using OnlinePremios.Domain.Enum;
 using OnlinePremios.Domain.ValueObject;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace OnlinePremios.Domain.Entities
         public string Nome { get; private set; }
         public CPF Cpf { get; private set; }
         public EMAIL Email { get; private set; }
-        public int StatusCliente { get; set; }
+        public StatusCliente StatusCliente { get; set; }
 
         // Adicionar AdHocks para CPF e EMAIL;
 
