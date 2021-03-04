@@ -18,7 +18,7 @@ namespace OnlinePremios.Domain.Entities
         public string Email { get; private set; }
         public StatusCliente StatusCliente { get; set; }
        
-        public virtual ICollection<Compra> Compras { get; set; }
+        public virtual IEnumerable<Compra> Compras { get; set; }
 
     }
 }
