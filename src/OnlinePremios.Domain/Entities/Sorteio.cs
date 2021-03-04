@@ -13,7 +13,7 @@ namespace OnlinePremios.Domain.Entities
             this.DataInicial = dataInicial;
             this.DataSorteio = dataSorteio;
             this.QtdeCotas = qtdeCotas;
-            // Setar StatusSorteio
+            this.StatusSorteio = StatusSorteio.Ativo;
         }
 
         public int Numero { get; private set; }

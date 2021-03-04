@@ -10,7 +10,8 @@ namespace OnlinePremios.Data.Mapping
         {
             builder.HasKey(x => x.Id);
             
-            builder.Property(x => x.Nome).IsRequired().HasMaxLength(120).HasColumnType("varchar(120)").HasColumnName("Nome");
+            builder.Property(x => x.Nome).IsRequired()
+                .HasMaxLength(120).HasColumnType("varchar(120)").HasColumnName("Nome");
 
             // Todo: Fazer o relacionamento correto para Objeto de Valor
             builder.Property(x => x.Cpf).HasMaxLength(11).IsFixedLength(true)
