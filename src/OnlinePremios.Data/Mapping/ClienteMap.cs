@@ -24,7 +24,10 @@ namespace OnlinePremios.Data.Mapping
             
             builder.ToTable("Cliente");
 
-            // Todo: Relacionamento
+            // 1:N Compras - (Só criaremos um cliente se houver uma compra)
+            builder.HasMany(c => c.Compras)
+                .WithOne(cli => cli.Cliente)
+                .HasForeignKey(fk => fk.ClienteId);
 
         }
     }
