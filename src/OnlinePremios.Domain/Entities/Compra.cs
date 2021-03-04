@@ -27,7 +27,7 @@ namespace OnlinePremios.Domain.Entities
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; set; }
 
-        public virtual ICollection<Cota> Cotas { get; set; }
+        public virtual IEnumerable<Cota> Cotas { get; set; }
 
     }
 }
