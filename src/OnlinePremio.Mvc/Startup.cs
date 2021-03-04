@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlinePremio.Mvc.Data;
 using OnlinePremios.Data.Orm;
+using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Notifications;
 
 namespace OnlinePremio.Mvc
 {
@@ -44,6 +46,10 @@ namespace OnlinePremio.Mvc
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<OnlinePremiosContext>();
+            services.AddScoped<INotificator, Notificator>();
+
 
             services.AddControllersWithViews();
             services.AddRazorPages();
