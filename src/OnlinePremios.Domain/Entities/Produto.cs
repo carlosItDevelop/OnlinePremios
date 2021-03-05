@@ -12,6 +12,9 @@ namespace OnlinePremios.Domain.Entities
             this.GaleriaId = galeriaId;
         }
 
+        // to EF
+        protected Produto() { }
+
         public string ImgURL { get; private set; }
         // Todo: file img (vou pensar se gravo no banco ou no disco;
         public string FileName { get; private set; }

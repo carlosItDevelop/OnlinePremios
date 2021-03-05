@@ -16,6 +16,9 @@ namespace OnlinePremios.Domain.Entities
             this.StatusSorteio = StatusSorteio.Ativo;
         }
 
+        // to EF
+        protected Sorteio() { }
+
         public int Numero { get; private set; }
         public DateTime DataInicial { get; private set; }
         public DateTime DataSorteio { get; private set; }

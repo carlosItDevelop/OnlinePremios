@@ -13,6 +13,9 @@ namespace OnlinePremios.Domain.Entities
             this.StatusCliente = StatusCliente.Ativo;
         }
 
+        // to EF
+        protected Cliente() { }
+
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public string Email { get; private set; }

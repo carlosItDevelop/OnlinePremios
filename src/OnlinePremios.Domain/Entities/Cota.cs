@@ -14,6 +14,9 @@ namespace OnlinePremios.Domain.Entities
             this.StatusCota = StatusCota.Disponivel;
         }
 
+        // to EF
+        protected Cota() { }
+
         public int Numero { get; private set; }
         public decimal Valor { get; private set; }
         public StatusCota StatusCota { get; private set; }

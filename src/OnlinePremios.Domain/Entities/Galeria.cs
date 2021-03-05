@@ -11,6 +11,9 @@ namespace OnlinePremios.Domain.Entities
             this.SorteioId = sorteioId;
         }
 
+        // to EF
+        protected Galeria() { }
+
         public Guid SorteioId { get; private set; }
         public virtual Sorteio Sorteio { get; set; }
         public virtual IEnumerable<Produto> Produtos { get; set; }

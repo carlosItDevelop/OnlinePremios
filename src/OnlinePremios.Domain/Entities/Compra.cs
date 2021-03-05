@@ -20,6 +20,9 @@ namespace OnlinePremios.Domain.Entities
             this.StatusCompra = StatusCompra.AguardandoPagamento;
         }
 
+        // to EF
+        protected Compra() { }
+
         public DateTime DataCompra { get; private set; }
         public int QtdeCotas { get; set; }
         public StatusCompra StatusCompra { get; set; } 
