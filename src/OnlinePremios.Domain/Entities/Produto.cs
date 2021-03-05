@@ -5,15 +5,17 @@ namespace OnlinePremios.Domain.Entities
 {
     public class Produto : EntityBase
     {
-        public Produto()
+        public Produto(string imgUrl, string fileName, Guid galeriaId)
         {
-
+            this.ImgURL = imgUrl;
+            this.FileName = fileName;
+            this.GaleriaId = galeriaId;
         }
 
-        public string ImgURL { get; set; }
+        public string ImgURL { get; private set; }
         // Todo: file img (vou pensar se gravo no banco ou no disco;
-        public string FileNome { get; set; }
-        public Guid GaleriaId { get; set; }
+        public string FileName { get; private set; }
+        public Guid GaleriaId { get; private set; }
         public virtual Galeria Galeria { get; set; }
 
     }
