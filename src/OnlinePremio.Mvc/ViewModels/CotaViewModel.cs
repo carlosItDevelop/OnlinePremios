@@ -23,20 +23,20 @@ namespace OnlinePremio.Mvc.ViewModels
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Display(Name = "Número")]
-        public int Numero { get; private set; }
+        public int Numero { get; set; }
 
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Display(Name = "Valor")]
-        public decimal Valor { get; private set; }
+        public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Display(Name = "Status")]
-        public StatusCota StatusCota { get; private set; }
+        public StatusCota StatusCota { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Display(Name = "Compra ID")]
-        public Guid CompraId { get; private set; }
+        public Guid CompraId { get; set; }
 
         public virtual Compra Compra { get; set; }
     }
