@@ -11,9 +11,10 @@ namespace OnlinePremios.Data.Mapping
             builder.HasKey(pk => pk.Id);
             builder.Property(p => p.SorteioId).HasColumnName("SorteioId").IsRequired();
 
-            // 1:1 Sorteio
-            builder.HasOne(s => s.Sorteio)
-                .WithOne(fk => fk.Galeria);
+            // Todo: Em observação. Modelar com o Domain Expert
+            //// 1:1 Sorteio
+            //builder.HasOne(s => s.Sorteio)
+            //    .WithOne(fk => fk.Galeria);
 
             // 1 : N => Produtos
             builder.HasMany(g => g.Produtos)
