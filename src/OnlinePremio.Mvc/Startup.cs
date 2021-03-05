@@ -36,16 +36,10 @@ namespace OnlinePremio.Mvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentityConfiguration(Configuration);
-
-            services.AddDbContext<OnlinePremiosContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMyDataContextConfiguration(Configuration);
 
 
-
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            // DI : Todo Criar Extension Method to DI too
             services.AddScoped<OnlinePremiosContext>();
             services.AddScoped<INotificator, Notificator>();
 
