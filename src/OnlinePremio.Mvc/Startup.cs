@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OnlinePremio.Mvc.Configurations;
 using OnlinePremio.Mvc.Data;
 using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Interfaces;
@@ -34,9 +35,7 @@ namespace OnlinePremio.Mvc
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentityConfiguration(Configuration);
 
             services.AddDbContext<OnlinePremiosContext>(options =>
                 options.UseSqlServer(
