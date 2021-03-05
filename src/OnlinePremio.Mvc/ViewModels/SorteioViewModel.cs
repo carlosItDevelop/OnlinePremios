@@ -39,11 +39,11 @@ namespace OnlinePremio.Mvc.ViewModels
         [Display(Name = "Status")]
         public StatusSorteio StatusSorteio { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [Display(Name = "Galeria ID")]
-        public Guid GaleriaId { get; set; }  // Todo: Avaliar este campo, pois tb tem em produto
+        //[Required(ErrorMessage = "O campo {0} é obrigatório")]
+        //[Display(Name = "Galeria ID")]
+        //public Guid GaleriaId { get; set; }  // Todo: Avaliar este campo, pois tb tem em produto
 
-        public virtual Galeria Galeria { get; set; }
+        //public virtual Galeria Galeria { get; set; }
 
     }
 }
