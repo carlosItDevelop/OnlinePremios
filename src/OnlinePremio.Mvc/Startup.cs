@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -37,6 +38,8 @@ namespace OnlinePremio.Mvc
         {
             services.AddIdentityConfiguration(Configuration);
             services.AddMyDataContextConfiguration(Configuration);
+
+            services.AddAutoMapper(typeof(Startup));
 
 
             // DI : Todo Criar Extension Method to DI too
