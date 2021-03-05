@@ -10,13 +10,16 @@ namespace OnlinePremios.Data.Mapping
         {
             builder.HasKey(x => x.Id);
 
-            /*
-                public string ImgURL { get; set; }
-                // Todo: file img (vou pensar se gravo no banco ou no disco;
-                public string FileNome { get; set; }
-                public Guid GaleriaId { get; set; }
-                public virtual Galeria Galeria { get; set; }             
-             */
+            // Todo: file img (vou pensar se gravo no banco ou no disco;
+
+            builder.Property(x => x.ImgURL).IsRequired().HasColumnName("ImgURL").HasMaxLength(2000);
+            builder.Property(x => x.FileName).IsRequired().HasColumnName("FileName").HasMaxLength(400);
+            builder.Property(x => x.GaleriaId).IsRequired().HasColumnName("GaleriaId");
+
+            // N:1 Galeria
+            builder.HasOne(x => x.Galeria)
+                .WithMany(x => x.Produtos)
+                .HasForeignKey(x => x.GaleriaId);
 
             builder.ToTable("Produto");
         }
