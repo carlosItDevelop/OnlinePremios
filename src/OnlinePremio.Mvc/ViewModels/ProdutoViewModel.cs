@@ -28,7 +28,7 @@ namespace OnlinePremio.Mvc.ViewModels
         [Required(ErrorMessage = "O Campo {0} é obrigatório.")]
         [Display(Name = "Nome do Arquivo")]
         [StringLength(400, ErrorMessage = "O campo {0} deve ter entre {2} e (1} caracteres", MinimumLength = 3)]
-        public string FileNome { get; set; }
+        public string FileName { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Display(Name = "Galeria ID")]
