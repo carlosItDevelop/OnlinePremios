@@ -23,7 +23,7 @@ namespace OnlinePremio.Mvc.ViewModels
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Display(Name = "Sorteio ID")] 
-        public Guid SorteioId { get; private set; }
+        public Guid SorteioId { get; set; }
         
         public virtual Sorteio Sorteio { get; set; }
         public virtual IEnumerable<Produto> Produtos { get; set; }
