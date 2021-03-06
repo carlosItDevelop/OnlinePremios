@@ -30,9 +30,9 @@ namespace OnlinePremio.Mvc
         
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // Configurations=>ExtensionMethods
+            // --------------------------------
             services.AddDependencyInjection();
-
             services.AddIdentityConfiguration(Configuration);
             services.AddMyDataContextConfiguration(Configuration);
 
