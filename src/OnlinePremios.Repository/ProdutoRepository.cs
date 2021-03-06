@@ -18,52 +18,23 @@ namespace OnlinePremios.Repository
             this._ctx = context;
         }
 
-        public Task<IEnumerable<Produto>> ObterTodosOsProdutosComSeusSorteios()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<Produto>> ObterTodosOsProdutosComSuasGalerias()
         {
                 return await _ctx.Produto.AsNoTracking().Include(f => f.Galeria)
                     .OrderBy(p => p.DataCadastro).ToListAsync();
         }
 
-        public Task<IEnumerable<Produto>> ObterTodosOsProdutosDeUmaGaleria(Guid galeriaId)
+        public async Task<IEnumerable<Produto>> ObterTodosOsProdutosDeUmaGaleria(Guid galeriaId)
         {
-            throw new NotImplementedException();
+                return await SelecionarTodos(p => p.Id == galeriaId);
         }
 
-        public Task<IEnumerable<Produto>> ObterTodosOsProdutosDeUmSorteio(Guid sorteioId)
+
+        public async Task<Produto> ObterUmProdutoComSuaGaleria(Guid id)
         {
-            throw new NotImplementedException();
+                return await _ctx.Produto.AsNoTracking().Include(f => f.Galeria)
+                    .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public Task<Produto> ObterUmProdutoComSeuSorteio(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Produto> ObterUmProdutoComSuaGaleria(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        //public async Task<Produto> ObterProdutoFornecedor(Guid id)
-        //{
-        //    return await Db.Produtos.AsNoTracking().Include(f => f.Fornecedor)
-        //        .FirstOrDefaultAsync(p => p.Id == id);
-        //}
-
-        //public async Task<IEnumerable<Produto>> ObterProdutosFornecedores()
-        //{
-        //    return await Db.Produtos.AsNoTracking().Include(f => f.Fornecedor)
-        //        .OrderBy(p => p.Nome).ToListAsync();
-        //}
-
-        //public async Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId)
-        //{
-        //    return await Buscar(p => p.FornecedorId == fornecedorId);
-        //}
     }
 }

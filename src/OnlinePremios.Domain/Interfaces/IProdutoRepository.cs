@@ -14,9 +14,5 @@ namespace OnlinePremios.Domain.Interfaces
         Task<IEnumerable<Produto>> ObterTodosOsProdutosComSuasGalerias();
         Task<Produto> ObterUmProdutoComSuaGaleria(Guid id);
 
-        Task<IEnumerable<Produto>> ObterTodosOsProdutosDeUmSorteio(Guid sorteioId);
-        Task<IEnumerable<Produto>> ObterTodosOsProdutosComSeusSorteios();
-        Task<Produto> ObterUmProdutoComSeuSorteio(Guid id);
-
     }
 }
