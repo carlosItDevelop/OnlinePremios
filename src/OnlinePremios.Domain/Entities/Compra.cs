@@ -21,7 +21,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Compra() { }
+        public Compra() { }
 
         public DateTime DataCompra { get; private set; }
         public int QtdeCotas { get; set; }

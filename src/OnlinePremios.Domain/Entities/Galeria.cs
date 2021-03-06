@@ -12,7 +12,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Galeria() { }
+        public Galeria() { }
 
         public Guid SorteioId { get; private set; }
         public virtual Sorteio Sorteio { get; set; }

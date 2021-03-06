@@ -17,7 +17,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Sorteio() { }
+        public Sorteio() { }
 
         public int Numero { get; private set; }
         public DateTime DataInicial { get; private set; }

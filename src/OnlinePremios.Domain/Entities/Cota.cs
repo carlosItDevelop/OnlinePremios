@@ -15,7 +15,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Cota() { }
+        public Cota() { }
 
         public int Numero { get; private set; }
         public decimal Valor { get; private set; }

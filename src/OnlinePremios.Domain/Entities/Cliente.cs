@@ -14,7 +14,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Cliente() { }
+        public Cliente() { }
 
         public string Nome { get; private set; }
         public string Cpf { get; private set; }

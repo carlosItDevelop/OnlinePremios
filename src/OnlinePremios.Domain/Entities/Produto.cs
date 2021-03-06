@@ -13,7 +13,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        protected Produto() { }
+        public Produto() { }
 
         public string ImgURL { get; private set; }
         // Todo: file img (vou pensar se gravo no banco ou no disco;
