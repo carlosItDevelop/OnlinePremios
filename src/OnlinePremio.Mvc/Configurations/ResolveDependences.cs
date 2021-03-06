@@ -18,6 +18,8 @@ namespace OnlinePremio.Mvc.Configurations
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IGaleriaRepository, GaleriaRepository>();
+            services.AddScoped<IGaleriaService, GaleriaService>();
 
             return services;
 
