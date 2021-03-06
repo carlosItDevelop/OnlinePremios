@@ -40,7 +40,7 @@ namespace OnlinePremios.Domain.Services
             if (!ExecutarValidacao(new GaleriaValidation(), galeria)) return;
 
 
-            // Todo: Posso validar no lugar do documento: Já existe uma Galeria para este sorteio!
+            // Todo: Posso validar no lugar: Já existe uma Galeria para este sorteio!
 
             //if (_galeriaRepository.ObterUmaGaleriaComSeusProtutos(f => f.Id != galeria.Id).Result.Any())
             //{
