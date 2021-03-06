@@ -10,6 +10,6 @@ namespace OnlinePremios.Domain.Interfaces
         Task Atualizar(Galeria galeria);
         Task Remover(Guid id);
 
-        Task AtualizarProduto(Produto produto);
+        Task AtualizarProduto(Produto produto);  // Todo: Ou atualizo aqui (Raiz de agregação ou em ProdutoService. 
     }
 }
