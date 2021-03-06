@@ -1,25 +1,32 @@
-﻿using OnlinePremios.Data.Orm;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Interfaces;
 using OnlinePremios.Repository.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
 {
     public class ProdutoRepository : RepositoryGeneric<Produto, Guid>, IProdutoRepository
     {
-        public ProdutoRepository(OnlinePremiosContext context) : base(context) { }
+        private readonly OnlinePremiosContext _ctx;
+        public ProdutoRepository(OnlinePremiosContext context) : base(context) 
+        {
+            this._ctx = context;
+        }
 
         public Task<IEnumerable<Produto>> ObterTodosOsProdutosComSeusSorteios()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Produto>> ObterTodosOsProdutosComSuasGalerias()
+        public async Task<IEnumerable<Produto>> ObterTodosOsProdutosComSuasGalerias()
         {
-            throw new NotImplementedException();
+                return await _ctx.Produto.AsNoTracking().Include(f => f.Galeria)
+                    .OrderBy(p => p.DataCadastro).ToListAsync();
         }
 
         public Task<IEnumerable<Produto>> ObterTodosOsProdutosDeUmaGaleria(Guid galeriaId)
