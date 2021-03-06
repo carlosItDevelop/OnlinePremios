@@ -1,6 +1,17 @@
-﻿namespace OnlinePremios.Domain.Entities.Validations
+﻿using FluentValidation;
+
+namespace OnlinePremios.Domain.Entities.Validations
 {
-    class GaleriaValidation
+
+
+    public class GaleriaValidation : AbstractValidator<Galeria>
     {
+        public GaleriaValidation()
+        {
+            RuleFor(f => f.SorteioId)
+                .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
+
+        }
     }
+
 }
