@@ -5,11 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlinePremio.Mvc.Configurations;
-using OnlinePremios.Data.Orm;
-using OnlinePremios.Domain.Interfaces;
-using OnlinePremios.Domain.Notifications;
-using OnlinePremios.Domain.Services;
-using OnlinePremios.Repository;
 
 namespace OnlinePremio.Mvc
 {
@@ -35,18 +30,13 @@ namespace OnlinePremio.Mvc
         
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDependencyInjection();
+
             services.AddIdentityConfiguration(Configuration);
             services.AddMyDataContextConfiguration(Configuration);
 
             services.AddAutoMapper(typeof(Startup));
-
-
-            // DI : Todo Criar Extension Method to DI too
-            services.AddScoped<OnlinePremiosContext>();
-            services.AddScoped<INotificator, Notificator>();
-
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<IProdutoService, ProdutoService>();
 
 
 
