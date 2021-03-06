@@ -1,6 +1,15 @@
-﻿namespace OnlinePremios.Domain.Interfaces
+﻿using OnlinePremios.Domain.Entities;
+using System;
+using System.Threading.Tasks;
+
+namespace OnlinePremios.Domain.Interfaces
 {
-    class IGaleriaService
+    public interface IGaleriaService : IDisposable
     {
+        Task Adicionar(Galeria galeria);
+        Task Atualizar(Galeria galeria);
+        Task Remover(Guid id);
+
+        Task AtualizarProduto(Produto produto);
     }
 }
