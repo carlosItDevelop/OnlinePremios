@@ -8,6 +8,8 @@ using OnlinePremio.Mvc.Configurations;
 using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Interfaces;
 using OnlinePremios.Domain.Notifications;
+using OnlinePremios.Domain.Services;
+using OnlinePremios.Repository;
 
 namespace OnlinePremio.Mvc
 {
@@ -42,6 +44,10 @@ namespace OnlinePremio.Mvc
             // DI : Todo Criar Extension Method to DI too
             services.AddScoped<OnlinePremiosContext>();
             services.AddScoped<INotificator, Notificator>();
+
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+
 
 
             services.AddControllersWithViews();

@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlinePremios.Data\OnlinePremios.Data.csproj" />
+    <ProjectReference Include="..\OnlinePremios.Repository\OnlinePremios.Repository.csproj" />
   </ItemGroup>
 
 </Project>
