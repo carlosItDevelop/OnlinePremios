@@ -6,8 +6,8 @@ namespace OnlinePremios.Domain.Interfaces
 {
     public interface IProdutoService : IDisposable
     {
-        Task Add(Produto produto);
-        Task Update(Produto produto);
-        Task Remove(Guid id);
+        Task Adicionar(Produto produto);
+        Task Atualizar(Produto produto);
+        Task Remover(Guid id);
     }
 }
