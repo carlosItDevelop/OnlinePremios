@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository.Base
 {
-    public abstract class RepositoryGeneric<TEntity, TKey> : IDomainGenericRepository<TEntity, TKey>
+    public abstract class RepositoryGeneric<TEntity, TKey> : IGenericRepository<TEntity, TKey>
         where TEntity : EntityBase, new()
     {
         protected OnlinePremiosContext _context;
