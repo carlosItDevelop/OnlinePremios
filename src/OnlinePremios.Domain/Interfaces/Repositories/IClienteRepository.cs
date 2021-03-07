@@ -3,7 +3,7 @@ using OnlinePremios.Domain.Entities;
 using System;
 using System.Threading.Tasks;
 
-namespace OnlinePremios.Domain.Interfaces
+namespace OnlinePremios.Domain.Interfaces.Repositories
 {
     public interface IClienteRepository : IGenericRepository<Cliente, Guid>
     {

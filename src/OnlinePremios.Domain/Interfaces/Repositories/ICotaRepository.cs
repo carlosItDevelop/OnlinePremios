@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OnlinePremios.Domain.Interfaces
+namespace OnlinePremios.Domain.Interfaces.Repositories
 {
     public interface ICotaRepository : IGenericRepository<Cota, Guid>
     {

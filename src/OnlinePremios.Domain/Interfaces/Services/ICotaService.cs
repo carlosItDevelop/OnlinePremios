@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace OnlinePremios.Domain.Interfaces
+namespace OnlinePremios.Domain.Interfaces.Services
 {
     public interface ICotaService : IDisposable
     {

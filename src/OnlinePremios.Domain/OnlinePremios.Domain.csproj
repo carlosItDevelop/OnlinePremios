@@ -8,9 +8,4 @@
     <PackageReference Include="FluentValidation" Version="9.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\Services\" />
-    <Folder Include="Interfaces\Repositories\" />
-  </ItemGroup>
-
 </Project>
