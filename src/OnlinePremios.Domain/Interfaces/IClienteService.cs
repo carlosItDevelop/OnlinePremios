@@ -11,5 +11,6 @@ namespace OnlinePremios.Domain.Interfaces
         Task Remover(Guid id);
 
         Task AtualizarCompra(Compra compra);
+        Task AddCompra(Compra compra);
     }
 }
