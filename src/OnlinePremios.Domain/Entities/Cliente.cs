@@ -6,11 +6,12 @@ namespace OnlinePremios.Domain.Entities
 {
     public class Cliente : EntityBase
     {
-        public Cliente(string nome, string documento, string email)
+        public Cliente(string nome, string documento, string email, TipoPessoa tipoPessoa)
         {
             // Validar
             this.Nome = nome;
             this.Documento = documento;
+            this.TipoPessoa = TipoPessoa;
             this.Email = email;
             this.StatusCliente = StatusCliente.Ativo;
         }
@@ -20,7 +21,7 @@ namespace OnlinePremios.Domain.Entities
 
         public string Nome { get; private set; }
         public string Documento { get; private set; }
-        public TipoFornecedor TipoFornecedor { get; set; }
+        public TipoPessoa TipoPessoa { get; set; }
 
         public string Email { get; private set; }
         public StatusCliente StatusCliente { get; set; }
