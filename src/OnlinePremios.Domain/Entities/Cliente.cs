@@ -10,6 +10,8 @@ namespace OnlinePremios.Domain.Entities
         {
             // Validar
             this.Nome = nome;
+            this.Cpf = cpf;
+            this.Email = email;
             this.StatusCliente = StatusCliente.Ativo;
         }
 
