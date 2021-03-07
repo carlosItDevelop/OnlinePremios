@@ -11,7 +11,7 @@ namespace OnlinePremios.Domain.Services
         private readonly IProdutoRepository _produtoRepository;
 
         public ProdutoService(IProdutoRepository produtoRepository,
-                              INotificator notificador) : base(notificador)
+                              INotificator notificator) : base(notificator)
         {
             _produtoRepository = produtoRepository;
         }
