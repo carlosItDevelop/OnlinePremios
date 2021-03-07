@@ -8,6 +8,16 @@ namespace OnlinePremios.Domain.Entities.Validations
         {
             RuleFor(f => f.Nome)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
+
+            /*
+             
+                public string Nome { get; private set; }
+                public string Cpf { get; private set; }
+                public string Email { get; private set; }
+                public StatusCliente StatusCliente { get; set; }
+
+             */
+
         }
     }
 
