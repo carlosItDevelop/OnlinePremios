@@ -20,6 +20,8 @@ namespace OnlinePremios.Domain.Entities
 
         public string Nome { get; private set; }
         public string Documento { get; private set; }
+        public TipoFornecedor TipoFornecedor { get; set; }
+
         public string Email { get; private set; }
         public StatusCliente StatusCliente { get; set; }
        

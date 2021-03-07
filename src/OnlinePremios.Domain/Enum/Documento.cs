@@ -1,6 +1,6 @@
 ﻿namespace OnlinePremios.Domain.Enum
 {
-    public enum Documento
+    public enum TipoPessoa
     {
         PessoaFisica = 1,
         PessoaJuridica
