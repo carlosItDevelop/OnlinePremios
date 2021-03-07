@@ -13,15 +13,16 @@ namespace OnlinePremios.Data.Mapping
             builder.Property(x => x.Nome).IsRequired()
                 .HasMaxLength(120).HasColumnType("varchar(120)").HasColumnName("Nome");
 
-            // Todo: Fazer o relacionamento correto para Objeto de Valor
-            builder.Property(x => x.Cpf).HasMaxLength(11).IsFixedLength(true)
-                .HasColumnName("Cpf").IsRequired().HasColumnType("varchar(11)");
+            builder.Property(p => p.Documento)
+                .IsRequired()
+                .HasColumnType("varchar(14)");
 
 
             builder.Property(x => x.Email).HasMaxLength(255)
                 .HasColumnName("Email").IsRequired().HasColumnType("varchar(255)");
 
             builder.Property(x => x.StatusCliente).HasColumnName("StatusCliente").IsRequired();
+            builder.Property(x => x.TipoPessoa).HasColumnName("TipoPessoa").IsRequired();
             
             builder.ToTable("Cliente");
 
