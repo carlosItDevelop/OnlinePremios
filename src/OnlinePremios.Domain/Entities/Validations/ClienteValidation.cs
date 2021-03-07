@@ -7,13 +7,15 @@ namespace OnlinePremios.Domain.Entities.Validations
         public ClienteValidation()
         {
             RuleFor(f => f.Nome)
-                .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
+                .Length(2, 120)
+                .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 
             RuleFor(f => f.Cpf)
-                .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
             RuleFor(f => f.Email)
-                .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
              
 
         }
