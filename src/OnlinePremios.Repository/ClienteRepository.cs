@@ -19,6 +19,7 @@ namespace OnlinePremios.Repository
             this._ctx = context;
         }
 
+
         public async Task<Cliente> ObterUmClienteComSuasCompras(Guid id)
         {
             return await this._ctx.Cliente.AsNoTracking()

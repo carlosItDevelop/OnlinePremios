@@ -9,7 +9,7 @@ namespace OnlinePremios.Domain.Interfaces
         Task Adicionar(Cliente cliente);
         Task Atualizar(Cliente cliente);
         Task Remover(Guid id);
+        //Task AddCompra(Compra compra);  // Todo: Implementar
 
-        Task AddCompra(Compra compra);
     }
 }

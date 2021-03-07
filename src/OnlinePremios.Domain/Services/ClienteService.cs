@@ -61,10 +61,7 @@ namespace OnlinePremios.Domain.Services
             _clienteRepository?.Dispose();
         }
 
-        Task IClienteService.AddCompra(Compra compra)
-        {
-            throw new NotImplementedException(); // Todo: Implementar
-        }
+
     }
 
 }

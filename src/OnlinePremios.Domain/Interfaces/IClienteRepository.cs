@@ -7,7 +7,8 @@ namespace OnlinePremios.Domain.Interfaces
 {
     public interface IClienteRepository : IGenericRepository<Cliente, Guid>
     {
-        Task<Cliente> ObterUmClienteComSuasCompras(Guid id);   
+        Task<Cliente> ObterUmClienteComSuasCompras(Guid id);
+
     }
 
 }
