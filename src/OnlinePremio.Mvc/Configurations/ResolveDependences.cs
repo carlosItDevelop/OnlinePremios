@@ -20,20 +20,19 @@ namespace OnlinePremio.Mvc.Configurations
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IProdutoService, ProdutoService>();
+
             services.AddScoped<IGaleriaRepository, GaleriaRepository>();
             services.AddScoped<IGaleriaService, GaleriaService>();
+
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
 
             services.AddScoped<ICotaRepository, CotaRepository>();
             services.AddScoped<ICotaService, CotaService>();
 
-
             return services;
 
         }
-
-
 
     }
 }
