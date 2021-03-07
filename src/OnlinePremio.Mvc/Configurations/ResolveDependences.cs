@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OnlinePremios.Data.Orm;
-using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Interfaces.Notify;
+using OnlinePremios.Domain.Interfaces.Repositories;
+using OnlinePremios.Domain.Interfaces.Services;
 using OnlinePremios.Domain.Notifications;
 using OnlinePremios.Domain.Services;
 using OnlinePremios.Repository;
@@ -22,6 +24,10 @@ namespace OnlinePremio.Mvc.Configurations
             services.AddScoped<IGaleriaService, GaleriaService>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
+
+            services.AddScoped<ICotaRepository, CotaRepository>();
+            services.AddScoped<ICotaService, CotaService>();
+
 
             return services;
 

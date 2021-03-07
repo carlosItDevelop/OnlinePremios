@@ -1,6 +1,8 @@
 ﻿using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Entities.Validations;
-using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Interfaces.Notify;
+using OnlinePremios.Domain.Interfaces.Repositories;
+using OnlinePremios.Domain.Interfaces.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

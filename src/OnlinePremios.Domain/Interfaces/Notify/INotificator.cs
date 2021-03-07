@@ -1,9 +1,7 @@
 ﻿using OnlinePremios.Domain.Notifications;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace OnlinePremios.Domain.Interfaces
+namespace OnlinePremios.Domain.Interfaces.Notify
 {
     public interface INotificator
     {

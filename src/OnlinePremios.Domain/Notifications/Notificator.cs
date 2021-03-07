@@ -1,4 +1,4 @@
-﻿using OnlinePremios.Domain.Interfaces;
+﻿using OnlinePremios.Domain.Interfaces.Notify;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,5 +27,6 @@ namespace OnlinePremios.Domain.Notifications
         {
             return _notifications.Any();
         }
+
     }
 }

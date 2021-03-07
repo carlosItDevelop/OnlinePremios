@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Interfaces.Notify;
 
 namespace OnlinePremio.Mvc.Controllers
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Entities;
-using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Repository.Base;
 using System;
 using System.Collections.Generic;

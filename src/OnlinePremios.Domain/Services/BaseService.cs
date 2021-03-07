@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using OnlinePremios.Domain.Core;
-using OnlinePremios.Domain.Interfaces;
+using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Notifications;
 
 namespace OnlinePremios.Domain.Services
