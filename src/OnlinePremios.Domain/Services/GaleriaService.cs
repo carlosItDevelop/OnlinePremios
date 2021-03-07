@@ -26,12 +26,6 @@ namespace OnlinePremios.Domain.Services
         {
             if (!ExecutarValidacao(new GaleriaValidation(), galeria)) return;
 
-            //if (_galeriaRepository.Buscar(f => f.Documento == galeria.Documento).Result.Any())
-            //{
-            //    Notificar("Já existe um galeria com este documento infomado.");
-            //    return;
-            //}
-
             await _galeriaRepository.Inserir(galeria);
         }
 
@@ -39,14 +33,11 @@ namespace OnlinePremios.Domain.Services
         {
             if (!ExecutarValidacao(new GaleriaValidation(), galeria)) return;
 
-
-            // Todo: Posso validar no lugar: Já existe uma Galeria para este sorteio!
-
-            //if (_galeriaRepository.ObterUmaGaleriaComSeusProtutos(f => f.Id != galeria.Id).Result.Any())
-            //{
-            //    Notificar("Já existe uma Galeria para este sorteio infomado.");
-            //    return;
-            //}
+            if (_galeriaRepository.SelecionarTodos(f => f.Id != galeria.Id).Result.Any())
+            {
+                Notificar("Já existe uma Galeria para este sorteio infomado.");
+                return;
+            }
 
             await _galeriaRepository.Atualizar(galeria);
         }
