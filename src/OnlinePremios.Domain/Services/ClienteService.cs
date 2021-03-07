@@ -13,7 +13,7 @@ namespace OnlinePremios.Domain.Services
         private readonly IClienteRepository _clienteRepository;
 
         public ClienteService(IClienteRepository fornecedorRepository,
-                                 INotificator notificador) : base(notificador)
+                                 INotificator notificator) : base(notificator)
         {
             _clienteRepository = fornecedorRepository;
         }
