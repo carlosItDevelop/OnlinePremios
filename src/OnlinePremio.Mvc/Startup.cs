@@ -67,6 +67,9 @@ namespace OnlinePremio.Mvc
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseGlobalizationConfig();
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
