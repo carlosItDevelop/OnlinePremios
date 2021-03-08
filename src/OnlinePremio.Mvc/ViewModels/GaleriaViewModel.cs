@@ -25,8 +25,8 @@ namespace OnlinePremio.Mvc.ViewModels
         [Display(Name = "Sorteio ID")] 
         public Guid SorteioId { get; set; }
         
-        public virtual Sorteio Sorteio { get; set; }
-        public virtual IEnumerable<Produto> Produtos { get; set; }
+        public virtual SorteioViewModel Sorteio { get; set; }
+        public virtual IEnumerable<ProdutoViewModel> Produtos { get; set; }
 
     }
 }

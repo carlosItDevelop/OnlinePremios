@@ -38,8 +38,8 @@ namespace OnlinePremio.Mvc.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Display(Name = "Cliente ID")]
         public Guid ClienteId { get; set; }
-        public virtual Cliente Cliente { get; set; }
+        public virtual ClienteViewModel Cliente { get; set; }
 
-        public virtual IEnumerable<Cota> Cotas { get; set; }
+        public virtual IEnumerable<CotaViewModel> Cotas { get; set; }
     }
 }

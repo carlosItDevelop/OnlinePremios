@@ -38,6 +38,6 @@ namespace OnlinePremio.Mvc.ViewModels
         [Display(Name = "Compra ID")]
         public Guid CompraId { get; set; }
 
-        public virtual Compra Compra { get; set; }
+        public virtual CompraViewModel Compra { get; set; }
     }
 }

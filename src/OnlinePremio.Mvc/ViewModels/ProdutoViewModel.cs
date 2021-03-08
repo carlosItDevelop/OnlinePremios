@@ -33,7 +33,7 @@ namespace OnlinePremio.Mvc.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Display(Name = "Galeria ID")]
         public Guid GaleriaId { get; set; }
-        public virtual Galeria Galeria { get; set; }
+        public virtual GaleriaViewModel Galeria { get; set; }
 
     }
 }
