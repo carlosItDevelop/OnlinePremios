@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlinePremios.Data.Orm;
 
 namespace OnlinePremios.Data.Migrations
 {
     [DbContext(typeof(OnlinePremiosContext))]
-    partial class OnlinePremiosContextModelSnapshot : ModelSnapshot
+    [Migration("20210308005615_UpdateProdutoNomeImgUrlEDescricao")]
+    partial class UpdateProdutoNomeImgUrlEDescricao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
