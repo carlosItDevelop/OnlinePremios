@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlinePremio.Mvc.ViewModels
@@ -22,7 +24,11 @@ namespace OnlinePremio.Mvc.ViewModels
         [Display(Name = "Img URL")]
         [StringLength(2000, ErrorMessage = "O campo {0} deve ter entre {2} e (1} caracteres", MinimumLength = 5)]
         public string ImgURL { get; set; }
-        // Todo: file img (vou pensar se gravo no banco ou no disco;
+
+
+        [DisplayName("Imagem do Produto")]
+        public IFormFile ImagemUpload { get; set; } // Todo: Implementar apenas na ViewModel
+
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório.")]
         [Display(Name = "Nome do Arquivo")]
