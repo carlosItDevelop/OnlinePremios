@@ -38,7 +38,7 @@ namespace OnlinePremio.Mvc
 
             services.AddAutoMapper(typeof(Startup));
 
-
+            services.AddMsgMvcConfiguration();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
