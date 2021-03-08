@@ -1,5 +1,4 @@
-﻿using OnlinePremios.Domain.Entities;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlinePremio.Mvc.ViewModels
