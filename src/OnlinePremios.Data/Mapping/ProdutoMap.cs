@@ -11,8 +11,8 @@ namespace OnlinePremios.Data.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.ImgURL).IsRequired().HasColumnName("ImgURL").HasMaxLength(2000);
-            builder.Property(x => x.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(400);
-            builder.Property(x => x.Descricao).IsRequired().HasColumnName("Descricao").HasMaxLength(400);
+            builder.Property(x => x.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(200);
+            builder.Property(x => x.Descricao).IsRequired().HasColumnName("Descricao").HasMaxLength(200);
             builder.Property(x => x.GaleriaId).IsRequired().HasColumnName("GaleriaId");
 
             // N:1 Galeria
