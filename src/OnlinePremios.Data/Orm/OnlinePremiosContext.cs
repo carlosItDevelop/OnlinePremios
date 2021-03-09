@@ -40,6 +40,8 @@ namespace OnlinePremios.Data.Orm
             // Impl033: Busca os Mapppings de uma vez só
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OnlinePremiosContext).Assembly);
 
+            base.OnModelCreating(modelBuilder);
+
 
         }
 
