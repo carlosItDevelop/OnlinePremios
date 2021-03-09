@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿
+using Microsoft.Extensions.DependencyInjection;
 using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
@@ -7,7 +8,7 @@ using OnlinePremios.Domain.Notifications;
 using OnlinePremios.Domain.Services;
 using OnlinePremios.Repository;
 
-namespace OnlinePremio.Mvc.Configurations
+namespace OnlinePremio.InversionOfControl.IoC
 {
     public static class ResolveDependences
     {
