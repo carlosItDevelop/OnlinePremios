@@ -40,6 +40,9 @@ namespace OnlinePremios.Data.Orm
             // Impl033: Busca os Mapppings de uma vez só
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OnlinePremiosContext).Assembly);
 
+            // Evitar a Deleção em cascata nos meus relacionamentos
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
+
             base.OnModelCreating(modelBuilder);
 
 
