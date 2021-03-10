@@ -9,5 +9,7 @@ namespace OnlinePremios.Domain.Interfaces.Services
         Task Adicionar(Compra compra);
         Task Atualizar(Compra compra);
         Task Remover(Guid id);
+
+        Task AdicionarCotas(Cota cota);
     }
 }
