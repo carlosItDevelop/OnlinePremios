@@ -10,4 +10,9 @@
     <ProjectReference Include="..\OnlinePremios.Repository\OnlinePremios.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="3.Filtter\" />
+    <Folder Include="2.Mapper\" />
+  </ItemGroup>
+
 </Project>
