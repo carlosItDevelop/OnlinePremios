@@ -4,9 +4,7 @@ using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Domain.Interfaces.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OnlinePremios.Domain.Services
@@ -53,28 +51,30 @@ namespace OnlinePremios.Domain.Services
 
 
 
-        public Task Remover(Guid id)
+        public async Task Remover(Guid id)
         {
-            if (_compraRepository.ObterUmaCompraComSeuCliente(id).Result. .Any())
+            var compra = await _compraRepository.SelecionarPorId(id);
+
+            if (compra == null)
             {
-                Notificar("A Galeria possui produto(s) cadastrados!");
+                Notificar("Compra inválida!");
                 return;
             }
 
-            // Todo: Este id é da Galeria. Preciso de um id do produto!
-            var produto = await _produtoRepository.SelecionarPorId(id); // Todo: Mudar aqui!
 
-            if (produto != null)
+            if (_clienteRepository.SelecionarTodos(f => f.Id == compra.ClienteId).Result.Any())
             {
-                await _produtoRepository.ExcluirPorId(produto.Id);
+                Notificar("A Compra possui Cliente(s) cadastrados!");
+                return;
             }
 
-            await _galeriaRepository.ExcluirPorId(id);
+            await _compraRepository.ExcluirPorId(id);
         }
 
 
         public Task AdicionarCotas(Cota cota)
         {
+            // Todo: Implementar
             throw new NotImplementedException();
         }
 
