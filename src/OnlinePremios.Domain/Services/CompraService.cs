@@ -55,7 +55,21 @@ namespace OnlinePremios.Domain.Services
 
         public Task Remover(Guid id)
         {
-            throw new NotImplementedException();
+            if (_compraRepository.ObterUmaCompraComSeuCliente(id).Result. .Any())
+            {
+                Notificar("A Galeria possui produto(s) cadastrados!");
+                return;
+            }
+
+            // Todo: Este id é da Galeria. Preciso de um id do produto!
+            var produto = await _produtoRepository.SelecionarPorId(id); // Todo: Mudar aqui!
+
+            if (produto != null)
+            {
+                await _produtoRepository.ExcluirPorId(produto.Id);
+            }
+
+            await _galeriaRepository.ExcluirPorId(id);
         }
 
 
