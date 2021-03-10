@@ -24,7 +24,7 @@ namespace OnlinePremios.Domain.Services
 
         public Task Adicionar(Compra compra)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new CompraValidation(), compra)) return;
         }
 
         public Task AdicionarCotas(Cota cota)
