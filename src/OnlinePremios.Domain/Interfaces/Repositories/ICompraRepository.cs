@@ -9,7 +9,7 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
     public interface ICompraRepository : IGenericRepository<Compra, Guid>
     {
         Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId);
-        Task<IEnumerable<Compra>> ObterTodasAsComprasComSeusClientes();
+        Task<IEnumerable<Compra>> ObterTodasAsComprasComSuasCotas();
         Task<Compra> ObterUmaCompraComSeuCliente(Guid id);
     }
 }

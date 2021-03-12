@@ -1,4 +1,5 @@
-﻿using OnlinePremios.Data.Orm;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Repository.Base;
@@ -18,9 +19,9 @@ namespace OnlinePremios.Repository
             this._ctx = context;
         }
 
-        public Task<IEnumerable<Compra>> ObterTodasAsComprasComSeusClientes()
+        public async Task<IEnumerable<Compra>> ObterTodasAsComprasComSuasCotas()
         {
-            throw new NotImplementedException();
+            return await _ctx.Compra.AsNoTracking().Include(f => f.Cotas).ToListAsync();
         }
 
         public Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId)
