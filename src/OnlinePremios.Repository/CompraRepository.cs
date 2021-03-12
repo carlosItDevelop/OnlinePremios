@@ -30,9 +30,9 @@ namespace OnlinePremios.Repository
             return await _ctx.Compra.AsNoTracking().Where(x => x.ClienteId == clienteId).ToListAsync();
         }
 
-        public Task<Compra> ObterUmaCompra(Guid id)
+        public async Task<Compra> ObterUmaCompra(Guid id)
         {
-            throw new NotImplementedException();
+            return await _ctx.Compra.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
