@@ -10,7 +10,7 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
     {
         Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId);
         Task<IEnumerable<Compra>> ObterTodasAsComprasComSuasCotas();
-        Task<Compra> ObterUmaCompraComSeuCliente(Guid id);
+        Task<Compra> ObterUmaCompra(Guid id);
     }
 }
 

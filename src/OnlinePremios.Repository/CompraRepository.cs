@@ -5,6 +5,7 @@ using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Repository.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
@@ -24,12 +25,12 @@ namespace OnlinePremios.Repository
             return await _ctx.Compra.AsNoTracking().Include(f => f.Cotas).ToListAsync();
         }
 
-        public Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId)
+        public async Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId)
         {
-            throw new NotImplementedException();
+            return await _ctx.Compra.AsNoTracking().Where(x => x.ClienteId == clienteId).ToListAsync();
         }
 
-        public Task<Compra> ObterUmaCompraComSeuCliente(Guid id)
+        public Task<Compra> ObterUmaCompra(Guid id)
         {
             throw new NotImplementedException();
         }
