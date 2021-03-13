@@ -66,10 +66,10 @@ namespace OnlinePremios.Domain.Services
         }
 
 
-        public Task AdicionarCotas(Cota cota)
+        public async Task AdicionarCotas(Cota cota)
         {
             // Todo: Implementar
-            throw new NotImplementedException();
+            await _cotaRepository.Inserir(cota);
         }
 
         public void Dispose()
