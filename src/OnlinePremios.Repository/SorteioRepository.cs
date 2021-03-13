@@ -26,22 +26,10 @@ namespace OnlinePremios.Repository
             return await _ctx.Sorteio.AsNoTracking().OrderBy(x => x.DataSorteio).ToListAsync();
         }
 
-        public Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosDeUmCliente(Guid clienteId)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<Sorteio> ObterUmSorteio(Guid id)
+        public async Task<Sorteio> ObterUmSorteio(Guid id)
         {
-            throw new NotImplementedException();
+            return await _ctx.Sorteio.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
-
-/*
-        public int Numero { get; private set; }
-        public DateTime DataInicial { get; private set; }
-        public DateTime DataSorteio { get; private set; }
-        public int QtdeCotas { get; private set; }
-        public StatusSorteio StatusSorteio { get; set; } 
- */
