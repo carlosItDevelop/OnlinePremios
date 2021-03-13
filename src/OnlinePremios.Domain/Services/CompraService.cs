@@ -68,7 +68,6 @@ namespace OnlinePremios.Domain.Services
 
         public async Task AdicionarCotas(Cota cota)
         {
-            // Todo: Implementar
             await _cotaRepository.Inserir(cota);
         }
 
