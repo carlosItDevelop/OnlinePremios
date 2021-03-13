@@ -13,4 +13,3 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
         Task<Compra> ObterUmaCompra(Guid id);
     }
 }
-
