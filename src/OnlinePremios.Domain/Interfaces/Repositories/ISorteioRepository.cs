@@ -12,7 +12,7 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
         // Todo: Busca / Filtro por Status
 
         Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosDeUmCliente(Guid clienteId);
-        Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosComSeusClientes();
+        Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosPorDataDeSorteio();
         Task<Sorteio> ObterUmSorteio(Guid id);
     }
 

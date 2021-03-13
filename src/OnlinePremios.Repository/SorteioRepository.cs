@@ -1,9 +1,11 @@
-﻿using OnlinePremios.Data.Orm;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Repository.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
@@ -19,9 +21,9 @@ namespace OnlinePremios.Repository
             _ctx = context;
         }
 
-        public Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosComSeusClientes()
+        public async Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosPorDataDeSorteio()
         {
-            throw new NotImplementedException();
+            return await _ctx.Sorteio.AsNoTracking().OrderBy(x => x.DataSorteio).ToListAsync();
         }
 
         public Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosDeUmCliente(Guid clienteId)
