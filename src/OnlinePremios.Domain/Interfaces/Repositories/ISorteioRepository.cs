@@ -9,6 +9,8 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
 
     public interface ISorteioRepository : IGenericRepository<Sorteio, Guid>
     {
+        // Todo: Busca / Filtro por Status
+
         Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosDeUmCliente(Guid clienteId);
         Task<IEnumerable<Sorteio>> ObterTodasOsSorteiosComSeusClientes();
         Task<Sorteio> ObterUmSorteio(Guid id);

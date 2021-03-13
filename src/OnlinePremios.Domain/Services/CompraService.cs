@@ -40,12 +40,6 @@ namespace OnlinePremios.Domain.Services
         {
             if (!ExecutarValidacao(new CompraValidation(), compra)) return;
 
-            if (_clienteRepository.SelecionarTodos(f => f.Id == compra.ClienteId).Result.Any())
-            {
-                Notificar("Já existe um Cliente para esta compra infomado.");
-                return;
-            }
-
             await _compraRepository.Atualizar(compra);
         }
 
