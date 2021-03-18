@@ -31,6 +31,9 @@ namespace OnlinePremio.InversionOfControl.IoC
             services.AddScoped<ICotaRepository, CotaRepository>();
             services.AddScoped<ICotaService, CotaService>();
 
+            services.AddScoped<ISorteioRepository, SorteioRepository>();
+            services.AddScoped<ISorteioService, SorteioService>();
+
             return services;
 
         }
