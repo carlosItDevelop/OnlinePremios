@@ -1,12 +1,14 @@
 ## OnlinePremios
 
-##### Projeto Online Prêmios | Visual Studio, Asp.Net Core 3.1, Angular 11
+##### Projeto Online Prêmios | Visual Studio, Asp.Net Core 3.1
+
+> Migrar para .NET5
 
 > TaskList Processos:
 
-- [ ] _**USUÁRIOS/CLIENTES:**_
+- [ ] _**USUÁRIOS / CLIENTES:**_
   - [ ] Cadastro de Usuários;
-  - [ ] Definir Papeis dos Usuários;
+    - [ ] Definir Papeis dos Usuários;
 - [ ] _**SORTEIO:**_
   - [ ] Criar um Sorteio;
     - [ ] Adicionar Galeria para este Sorteio;
@@ -15,5 +17,8 @@
     - [ ] Adicionar Produtos na Galeria do Sorteio;
 - [ ] _**COMPRA:**_
   - [ ] Iniciar uma Compra;
-  - [ ] Associar Sorteio(s);
-  - [ ] Adicionar Cliente;
+      - [ ] Adicionar Cliente;
+      - [ ] Associar Sorteio(s);
+      - [ ] Criar Checkout;
+      - [ ] Alterações de Status;
+      - [ ] Finalizar Compra;
