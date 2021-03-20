@@ -4,6 +4,9 @@
 
 > TaskList
 
--[ ] Criar entidades
+- [ ] Processos
+  - [ ] Cadastro de usuários.
+  - [ ] Criar um Sorteio.
+    - [ ] Adicionar Galeria para este Sorteio
 
  
