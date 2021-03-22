@@ -1,6 +1,8 @@
 ﻿using OnlinePremios.Domain.Core;
 using OnlinePremios.Domain.Enum;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace OnlinePremios.Domain.Entities
 {
@@ -25,7 +27,7 @@ namespace OnlinePremios.Domain.Entities
         public int QtdeCotas { get; private set; }
         public StatusSorteio StatusSorteio { get; set; }
 
-        //public Guid GaleriaId { get; set; } // Todo: Avaliar este campo, pois tb tem em produto
-        //public virtual Galeria Galeria { get; set; }
+        public virtual IEnumerable<Cota> Cota { get; set; }
+
     }
 }

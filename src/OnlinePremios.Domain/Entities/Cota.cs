@@ -24,5 +24,10 @@ namespace OnlinePremios.Domain.Entities
 
         public virtual Compra Compra { get; set; }
 
+
+        // Todo: Cotas para pertencer a Compra, precisa ter outra denominação, ainda que seja a mesma Cota que pegamos do Sorteio.
+        // Todo: Preciso mexer no Map, na Model Compra, nos Services e Repositories;
+        // Todo: Já adicioei uma coleção de Cotas no Sorteio => IEnumerable<Cota> Cota (in Sorteio);
+
     }
 }
