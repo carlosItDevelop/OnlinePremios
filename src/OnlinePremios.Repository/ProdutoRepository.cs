@@ -1,12 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OnlinePremios.Data.Orm;
+﻿using OnlinePremios.Data.Orm;
 using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Repository.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
 {
