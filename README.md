@@ -11,9 +11,8 @@
     - [ ] Definir Papeis dos Usuários;
 - [ ] _**SORTEIO:**_
   - [ ] Criar um Sorteio;
-    - [ ] Adicionar Galeria para este Sorteio;
     - [ ] Definir Data inicial e Data do Sorteio;
-    - [ ] Definir qtde de Produtos na Galeria/Sorteio;
+    - [ ] Adicionar Fotos do Sorteio;
     - [ ] Adicionar Produtos na Galeria do Sorteio;
 - [ ] _**COMPRA:**_
   - [ ] Iniciar uma Compra;
