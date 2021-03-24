@@ -30,32 +30,17 @@
 > Prof. Preciso que faça o mapeamento da cota para o sorteio
 
 ---
-#### Precisa mudar o Mapeamento de Cota 
-```CSharp
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OnlinePremios.Domain.Entities;
 
-namespace OnlinePremios.Data.Mapping
-{
-    public class CotaMap : IEntityTypeConfiguration<Cota>
-    {
-        public void Configure(EntityTypeBuilder<Cota> builder)
-        {
-            builder.HasKey(x => x.Id);
+_**IMPORTANTE**_
+- [ ] Fazer mapeamento de cota para o sorteio, retirando o mapeamento de compra
+- [ ] Quando cadastrar um sorteio ja fazer o cadastro das cotas em massa
+    - [ ] Número sequencial iniciado do 0 ate a quantidade informada
+    - [ ] Valor da cota
+    - [ ] Status = Disponivel
 
-            builder.Property(x => x.Numero).IsRequired().HasColumnName("Numero");
-            builder.Property(x => x.StatusCota).IsRequired().HasColumnName("StatusCota");
-            builder.Property(x => x.Valor).IsRequired().HasColumnName("Valor");
+---
 
-            builder.ToTable("Cota");
+> Quando fizer esse mapeamento eu ja vou cadastrar o primeiro sorteio
+> para apresentar as cotas já cadastradas e vendendo
 
-            // 1:N Compras : Cota
-            builder.HasOne(x => x.Compra)
-                .WithMany(x => x.Cotas)
-                .HasForeignKey(x => x.CompraId);
-        }
-    }
-}
-
-```
+---
