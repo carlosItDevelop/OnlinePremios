@@ -1,0 +1,66 @@
+﻿@model OnlinePremios.Domain.Entities.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Documento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Documento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoPessoa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAtualizacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAtualizacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserUpdate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

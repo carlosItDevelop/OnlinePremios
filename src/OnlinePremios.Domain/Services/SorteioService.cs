@@ -1,5 +1,6 @@
 ﻿using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Entities.Validations;
+using OnlinePremios.Domain.Enum;
 using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Domain.Interfaces.Services;
@@ -52,6 +53,11 @@ namespace OnlinePremios.Domain.Services
             _sorteioRepository?.Dispose(); 
         }
 
+        public void GerarCotas(int numero, int quantidade)
+        {
+            var sorteio = new Sorteio();
+            sorteio.GerarCota(numero, quantidade);
+        }
     }
 }
 

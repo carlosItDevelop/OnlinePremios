@@ -1,50 +1,109 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OnlinePremio.Mvc</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OnlinePremio.Mvc</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<html>
+
+@await Html.PartialAsync("PartialViews/_head")
+
+<body class="hold-transition skin-blue sidebar-mini fixed">
+    <div class="wrapper">
+
+        <!-- Header Navbar: style can be found in header.less -->
+        @await Html.PartialAsync("PartialViews/_header_navbar")
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                @await Html.PartialAsync("PartialViews/_sidebar")
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                @await Html.PartialAsync("PartialViews/_menu")
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        @* Main Content *@
+
+        <div class="content-wrapper">
+            <section class="content-header" style="color:#000000">
+                <h1>
+                    Home
+                    <strong style="font:10px arial;">Preview</strong>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    @*<li style="color:#000"><a href="#">Forms</a></li>
+                        <li class="active" style="color:#000">Advanced Elements</li>*@
+                </ol>
+            </section>
+
+            <div class="content-header" style="background-color:#ffffff; margin:5px; border-radius:5px; border:1px solid #000000;">
+                <partial name="_CookieConsentPartial" />
+                <main role="main" class="pb-3">
+                    @RenderBody()
+
+                </main>
+
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.00
+            </div>
+            <strong>Copyright &copy; 2018-2019 <a href="http://luthtecnologia.com.br">HADeveloper</a>.</strong>
+        </footer>
+
+
+        <!-- Control Sidebar -->
+        @await Html.PartialAsync("PartialViews/_control_sidebar")
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - OnlinePremio.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    @*<script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
     @RenderSection("Scripts", required: false)
+
+    <script src="~/bower_components/jquery/dist/jquery.js"></script>
+    <script src="~/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/bower_components/raphael/raphael.min.js"></script>
+    <script src="~/bower_components/morris.js/morris.min.js"></script>
+    <script src="~/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="~/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+
+    <script src="~/bower_components/moment/min/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="~/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="~/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <script src="~/dist/js/pages/dashboard.js"></script>
+    <script src="~/dist/js/demo.js"></script>
+
+
+    @*@RenderSection("Scripts", required: false)*@
+
+
 </body>
 </html>
