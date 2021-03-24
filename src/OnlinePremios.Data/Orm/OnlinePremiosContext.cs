@@ -19,7 +19,7 @@ namespace OnlinePremios.Data.Orm
 
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Galeria> Galeria { get; set; }
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
