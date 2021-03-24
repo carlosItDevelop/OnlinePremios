@@ -22,7 +22,7 @@ namespace OnlinePremio.InversionOfControl.IoC
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IProdutoService, ProdutoService>();
 
-            services.AddScoped<IGaleriaRepository, GaleriaRepository>();
+
             services.AddScoped<IGaleriaService, GaleriaService>();
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
