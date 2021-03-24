@@ -45,7 +45,7 @@ _**IMPORTANTE**_
 
 ---
 
-###CSharp
+```CSharp
 ---
 > Código funcional
 @foreach (var item in Model)
@@ -101,3 +101,4 @@ _**IMPORTANTE**_
                             </span>
                         </span>
                     </div>
+                    ```
