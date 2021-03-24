@@ -1,8 +1,1395 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Multi Select Buttons Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <style>
+        #search {
+            width: 100%;
+        }
+
+        .searchicon {
+            color: #5CB85C;
+        }
+
+        .col-xs-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-sm-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-md-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-lg-1 {
+            padding-left: 2px;
+            padding-right: 2px;
+            padding-left:2px; 
+            padding-right:2px; 
+            width:57px; 
+            height:36px";
+        }
+        .container{
+            width: 100%;
+        }
+
+        .items-collection {
+            margin: 0px 0 0 0;
+            align-items: initial;
+        }
+
+            .items-collection label.btn-success.active {
+                background-color: #ff0000;
+                color: #FFF;
+            }
+
+            .items-collection label.btn-success {
+                width: 100%;
+                border: 1px solid #000000;
+                margin: 1px;
+                border-radius: 17px;
+                color: #FFF;
+            }
+
+            .items-collection label .itemcontent {
+                width: 100%;
+            }
+
+            .items-collection .btn-group {
+                width: 100%
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        @*<div class="page-header">
+            <h1>Multi Select Buttons <small>A template, demonstrating multiple buttons with select capabilities</small></h1>
+        </div>*@
+
+        <!-- Multi Select Buttons - START -->
+        <div class="container">
+            <h2>Escolha seus numeros !</h2>
+            <div class="row">
+                <div class="form-group">
+                    <div class="items-collection row">
+
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        000
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <span class="info-block block-info clearfix">
+                                <sapn data-toggle="buttons" class="btn-group itemcontent">
+                                    <label class="btn btn-success">
+                                        001
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-truck fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </span>
+                                    </label>
+                                </sapn>
+                            </span>
+                        </div>
+                        <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <div class="info-block block-info clearfix">
+                                <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                    <label class="btn btn-success">
+                                        002
+                                        <div class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                            @*<span class="fa fa-car fa-2x"></span>*@
+                                            @*<h5>000</h5>*@
+                                        </div>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            @*<div class="row">
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <i class="fa fa-search fa-2x pull-left searchicon"></i><input type="search" class="form-control" id="search" placeholder="Filter items...">
+                    </div>
+                </div>
+            </div>*@
+        </div>
+
+
+
+        @*<script>
+            $(function () {
+                $('#search').on('keyup', function () {
+                    var pattern = $(this).val();
+                    $('.items-collection .items').hide();
+                    $('.items-collection .items').filter(function () {
+                        return $(this).text().match(new RegExp(pattern, 'i'));
+                    }).show();
+                });
+            });</script>*@
+        <!-- Multi Select Buttons - END -->
+
+    </div>
+
+</body>
+</html>

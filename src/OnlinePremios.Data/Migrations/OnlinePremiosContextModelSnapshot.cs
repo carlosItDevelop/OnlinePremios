@@ -120,6 +120,9 @@ namespace OnlinePremios.Data.Migrations
                         .HasColumnName("Numero")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("SorteioId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("StatusCota")
                         .HasColumnName("StatusCota")
                         .HasColumnType("int");
@@ -134,6 +137,8 @@ namespace OnlinePremios.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CompraId");
+
+                    b.HasIndex("SorteioId");
 
                     b.ToTable("Cota");
                 });
@@ -243,6 +248,9 @@ namespace OnlinePremios.Data.Migrations
                     b.Property<Guid?>("UserUpdate")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("ValorCotas")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Sorteio");
@@ -253,7 +261,6 @@ namespace OnlinePremios.Data.Migrations
                     b.HasOne("OnlinePremios.Domain.Entities.Cliente", "Cliente")
                         .WithMany("Compras")
                         .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -262,8 +269,11 @@ namespace OnlinePremios.Data.Migrations
                     b.HasOne("OnlinePremios.Domain.Entities.Compra", "Compra")
                         .WithMany("Cotas")
                         .HasForeignKey("CompraId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("OnlinePremios.Domain.Entities.Sorteio", null)
+                        .WithMany("Cota")
+                        .HasForeignKey("SorteioId");
                 });
 
             modelBuilder.Entity("OnlinePremios.Domain.Entities.Galeria", b =>
@@ -271,7 +281,6 @@ namespace OnlinePremios.Data.Migrations
                     b.HasOne("OnlinePremios.Domain.Entities.Sorteio", "Sorteio")
                         .WithMany()
                         .HasForeignKey("SorteioId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -280,7 +289,6 @@ namespace OnlinePremios.Data.Migrations
                     b.HasOne("OnlinePremios.Domain.Entities.Galeria", "Galeria")
                         .WithMany("Produtos")
                         .HasForeignKey("GaleriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
