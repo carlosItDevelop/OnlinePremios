@@ -22,3 +22,5 @@
       - [ ] Criar Checkout;
       - [ ] Alterações de Status;
       - [ ] Finalizar Compra;
+- [ ] _**COTAS**_
+    - [ ] 
