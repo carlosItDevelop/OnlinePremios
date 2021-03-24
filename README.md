@@ -46,7 +46,6 @@ _**IMPORTANTE**_
 ---
 
 ```CSharp
----
 > Código funcional
 @foreach (var item in Model)
                {
@@ -63,14 +62,15 @@ _**IMPORTANTE**_
                         </span>
                     </div>
 
-> Quero o codigo assim
+> Quero o codigo assim, porem oa @if (item.StatusCota == 1) estão dando erro pelo fato de ser int
+> Me ajuda ai nesse codigo
 
 @foreach (var item in Model)
                {
                     <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
                         <span class="info-block block-info clearfix">
                             <span data-toggle="buttons" class="btn-group bizmoduleselect">
-                                @if @Html.DisplayFor(modelItem => item.Status=1)
+                                @if (modelItem == 1)
                                 {
                                 <label class="btn btn-success">
                                     @Html.DisplayFor(modelItem => item.Numero)
@@ -79,7 +79,7 @@ _**IMPORTANTE**_
                                     </span>
                                 </label>
                                 }
-                                @if @Html.DisplayFor(modelItem => item.Status=2)
+                                @if (modelItem => item.Status=2)
                                 {
                                 <label class="btn btn-warning">
                                     @Html.DisplayFor(modelItem => item.Numero)
@@ -88,7 +88,7 @@ _**IMPORTANTE**_
                                     </span>
                                 </label>
                                 }
-                                @if @Html.DisplayFor(modelItem => item.Status=3)
+                                @if (modelItem => item.Status=3)
                                 {
                                 <label class="btn btn-danger">
                                     @Html.DisplayFor(modelItem => item.Numero)
