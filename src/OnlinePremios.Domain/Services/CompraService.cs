@@ -13,16 +13,19 @@ namespace OnlinePremios.Domain.Services
     {
         private readonly ICompraRepository _compraRepository;
         private readonly ICotaRepository _cotaRepository;
+        private readonly ICompraItemRepository _compraItemRepository;
         private readonly IClienteRepository _clienteRepository;
 
 
         public CompraService(ICompraRepository compraRepository, 
                              ICotaRepository cotaRepository,
+                             ICompraItemRepository compraItemRepository,
                              IClienteRepository clienteRepository,
                              INotificator notificator) : base(notificator)
         {
             _compraRepository = compraRepository;
             _cotaRepository = cotaRepository;
+            compraItemRepository = compraItemRepository;
             _clienteRepository = clienteRepository;
         }
 
@@ -71,10 +74,16 @@ namespace OnlinePremios.Domain.Services
             await _cotaRepository.Inserir(cota);
         }
 
+        public async Task AdicionarCompraItems(CompraItem compraItem)
+        {
+            await _compraItemRepository.Inserir(compraItem);
+        }
+
         public void Dispose()
         {
             _compraRepository?.Dispose();
             _cotaRepository?.Dispose();
+            _compraItemRepository?.Dispose();
             _clienteRepository?.Dispose();
         }
 

@@ -1,0 +1,72 @@
+﻿@model OnlinePremios.Domain.Entities.Sorteio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sorteio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataInicial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataSorteio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataSorteio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdeCotas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QtdeCotas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorCotas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorCotas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusSorteio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusSorteio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAtualizacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAtualizacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserUpdate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

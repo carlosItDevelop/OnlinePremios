@@ -18,7 +18,7 @@ namespace OnlinePremios.Data.Orm
         public DbSet<Compra> Compra { get; set; }
         public DbSet<Sorteio> Sorteio { get; set; }
         public DbSet<Cota> Cota { get; set; }
-
+        public DbSet<CompraItem> CompraItem { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         
