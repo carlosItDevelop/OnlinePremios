@@ -32,6 +32,7 @@ namespace OnlinePremios.Domain.Entities
         public Guid CompraId { get; set; }
 
         public virtual Compra Compra { get; set; }
+        public virtual Sorteio Sorteio { get; set; }
 
     }
 }

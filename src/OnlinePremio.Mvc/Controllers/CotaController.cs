@@ -22,7 +22,8 @@ namespace OnlinePremio.Mvc.Controllers
         // GET: Cota
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cota.Include(c => c.Compra);
+            var applicationDbContext = _context.Cota.Include(c => c.Compra).Include(cli => cli.Compra.Cliente).OrderBy(o => o.Numero);
+            //var applicationDbContext = _context.Cota.OrderBy(o => o.Numero);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +36,7 @@ namespace OnlinePremio.Mvc.Controllers
             }
 
             var cota = await _context.Cota
-                .Include(c => c.Compra)
+                .Include(c => c.Sorteio)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cota == null)
             {

@@ -1,71 +1,199 @@
 ﻿@model IEnumerable<OnlinePremios.Domain.Entities.Cota>
+@using OnlinePremios.Domain.Enum
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<head>
+    <meta charset="utf-8" />
+    <title>Kirk Silva - Rifa da Videl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Valor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StatusCota)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Compra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataCadastro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataAtualizacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserUpdate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StatusCota)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Compra.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCadastro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataAtualizacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserUpdate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <style>
+        #search {
+            width: 100%;
+        }
+
+        .searchicon {
+            color: #5CB85C;
+        }
+
+        .col-xs-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-sm-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-md-1 {
+            width: 20%;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .col-lg-1 {
+            padding-left: 2px;
+            padding-right: 2px;
+            padding-left: 2px;
+            padding-right: 2px;
+            width: 57px;
+            height: 36px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .items-collection {
+            margin: 0px 0 0 0;
+            align-items: initial;
+        }
+
+            .items-collection label.btn-success.active {
+                background-color: #ff0000;
+                color: #FFF;
+            }
+
+            .items-collection label.btn-success {
+                width: 100%;
+                border: 2px solid #ff0000;
+                margin: 1px;
+                border-radius: 17px;
+                color: #FFF;
+            }
+
+            .items-collection label.btn-default {
+                width: 100%;
+                border: 2px solid #5f5e5e;
+                margin: 1px;
+                border-radius: 17px;
+                color: #000;
+            }
+
+            .items-collection label.btn-warning {
+                width: 100%;
+                border: 2px solid #e0520a;
+                margin: 1px;
+                border-radius: 17px;
+                color: #FFF;
+            }
+
+            .items-collection label .itemcontent {
+                width: 100%;
+            }
+
+            .items-collection .btn-group {
+                width: 100%
+            }
+    </style>
+</head>
+<div>
+    <h2>
+        Escolha seus numeros e clicke
+        <a asp-action="Create" type="submit" class="btn btn-info">
+
+            << A Q U I >>
+        </a> para comprar
+    </h2>
+</div>
+<div class="container">
+    <div class="container">
+
+        <hr />
+        <div class="row">
+            <div class="form-group">
+                <div class="items-collection row">
+
+
+
+                    @foreach (var item in Model)
+               {
+                    <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
+                        <span class="info-block block-info clearfix">
+                            <span data-toggle="buttons" class="btn-group bizmoduleselect">
+                                @*<label class="btn btn-success">
+                                        @Html.DisplayFor(modelItem => item.Numero)
+                                        <span class="itemcontent">
+                                            <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                        </span>
+                                    </label>*@
+                                @if (item.StatusCota == StatusCota.Disponivel)
+                                {
+                                <label class="btn btn-success">
+                                    @Html.DisplayFor(modelItem => item.Numero)
+                                    <span class="itemcontent">
+                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                    </span>
+                                </label>
+                                }
+                                @if (item.StatusCota == StatusCota.Reservada)
+                                {
+                                <label class="btn btn-warning">
+                                    @Html.DisplayFor(modelItem => item.Numero)
+                                    <span class="itemcontent">
+                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                    </span>
+                                </label>
+                                }
+                                @if (item.StatusCota == StatusCota.Comprada)
+                                {
+                                <label class="btn btn-default">
+                                    @Html.DisplayFor(modelItem => item.Numero)
+                                    <span class="itemcontent">
+                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                    </span>
+                                </label>
+                                }
+                            </span>
+                        </span>
+                    </div>
+    }
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    @*<div class="row">
+            <br>
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <i class="fa fa-search fa-2x pull-left searchicon"></i><input type="search" class="form-control" id="search" placeholder="Filter items...">
+                </div>
+            </div>
+        </div>*@
+
+
+    @*
+        <script>
+            $(function () {
+                $('#search').on('keyup', function () {
+                    var pattern = $(this).val();
+                    $('.items-collection .items').hide();
+                    $('.items-collection .items').filter(function () {
+                        return $(this).text().match(new RegExp(pattern, 'i'));
+                    }).show();
+                });
+            });</script>*@
+    <!-- Multi Select Buttons - END -->
+
+</div>
+

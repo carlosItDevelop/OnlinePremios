@@ -75,7 +75,7 @@ _**IMPORTANTE**_
                                 <label class="btn btn-success">
                                     @Html.DisplayFor(modelItem => item.Numero)
                                     <span class="itemcontent">
-                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                        <input type="checkbox" name="var_id[]" id="@Html.DisplayFor(modelItem => item.Numero)" autocomplete="off" value="">
                                     </span>
                                 </label>
                                 }
