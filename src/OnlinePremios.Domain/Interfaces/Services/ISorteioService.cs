@@ -9,5 +9,6 @@ namespace OnlinePremios.Domain.Interfaces.Services
         Task Adicionar(Sorteio sorteio);
         Task Atualizar(Sorteio sorteio);
         Task Remover(Guid id);
+        void GerarCotas(int numero, int quantidade);
     }
 }
