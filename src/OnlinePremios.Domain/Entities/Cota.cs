@@ -13,16 +13,6 @@ namespace OnlinePremios.Domain.Entities
             this.StatusCota = StatusCota.Disponivel;
         }
 
-        /// <summary>
-        /// Ess construto é para adiconar cotas no Sorteio
-        /// </summary>
-        /// <param name="numero">Numeração sequancia das cotas</param>
-        /// <param name="status">Status Inciial da cota</param>
-        public Cota(int numero = 0)
-        {
-            this.Numero = numero;
-
-        }
         // to EF
         public Cota() { }
 
@@ -32,6 +22,7 @@ namespace OnlinePremios.Domain.Entities
         public Guid CompraId { get; set; }
 
         public virtual Compra Compra { get; set; }
+        public virtual Sorteio Sorteio { get; set; }
 
     }
 }

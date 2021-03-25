@@ -1,5 +1,6 @@
 ﻿using OnlinePremios.Domain.Entities;
 using OnlinePremios.Domain.Entities.Validations;
+using OnlinePremios.Domain.Enum;
 using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Domain.Interfaces.Services;

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Vouchers</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20px;
+        }
+
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media screen {
+            html, body {
+                width: 800px;
+            }
+        }
+
+        body {
+            padding: 5mm;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 8px;
+            font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+            line-height: 85%;
+        }
+
+        #main-wrap {
+            overflow: hidden;
+            background-color: #fff;
+            max-height: 300px;
+            z-index: 6;
+            margin: auto;
+            float: left;
+            text-align: center;
+            border: solid 2px #000000;
+            border-width: 1px;
+            display: initial;
+            background-image: url(https://i.imgur.com/aRMhKhU.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        #main-wrap {
+            overflow: hidden;
+            width: 17%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #leftside {
+            display: inline-block;
+            width: 90%;
+            font-size: 12px;
+            line-height: 5px;
+            height: 75px;
+        }
+
+        #rightside {
+            display: inline-block;
+            width: 45%;
+            height: 75px;
+            font-size: 12px
+        }
+
+        h4{
+            font-size: 15px
+        }
+        img.logo {
+            width: 120%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qrcode {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div style="margin:3px" id="main-wrap">
+        <div id="leftside">
+            <br><br><br><br>
+            <strong>R$-%u_moneyPaid% - %u_actualProfileName%</strong>
+            <h4> PIN: %u_username% </h4>
+        </div>
+    </div>

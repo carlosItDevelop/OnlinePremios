@@ -24,8 +24,7 @@ namespace OnlinePremios.Data.Mapping
             builder.Property(x => x.DataSorteio).IsRequired().HasColumnName("DataSorteio");
             builder.Property(x => x.QtdeCotas).IsRequired().HasColumnName("QtdeCotas");
             builder.Property(x => x.StatusSorteio).IsRequired().HasColumnName("StatusSorteio");
-
-            builder.ToTable("Sorteio");
+            builder.Property(x => x.ValorCotas).IsRequired().HasColumnName("ValorCotas");
 
 
         }

@@ -1,4 +1,5 @@
 ﻿using OnlinePremios.Domain.Entities;
+using OnlinePremios.Domain.Enum;
 using System;
 using System.Threading.Tasks;
 
