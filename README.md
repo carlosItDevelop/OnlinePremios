@@ -11,19 +11,23 @@
     - [ ] Definir Papeis dos Usuários;
 - [ ] _**SORTEIO:**_
   - [ ] Criar um Sorteio;
+    - [ ] Adicionar Vendedor;
     - [ ] Definir Data inicial e Data do Sorteio;
     - [ ] Adicionar Fotos do Sorteio;
-    - [ ] Adicionar Produtos na Galeria do Sorteio;
+    - [ ] Definir a quantidade de Cotas;
+    - [ ] Gerar Cotas em massa pela quantidade informada, sempre iniciar do 0;
 - [ ] _**COMPRA:**_
   - [ ] Iniciar uma Compra;
       - [ ] Adicionar Cliente;
       - [ ] Associar Sorteio(s);
-      - [ ] Adicionar Cotas para a Compra / Cliente
+      - [ ] Adicionar CompraItems para a Compra / Cliente
       - [ ] Criar Checkout;
-      - [ ] Alterações de Status;
+      - [ ] Alterações de Status = Pendente de pagamento;
+      - [ ] Alteração dos Status da Cota = Reservada
       - [ ] Finalizar Compra;
-- [ ] _**COTAS**_
-    - [ ] 
+      - [ ] Confirma Pagamento da compra;
+      - [ ] Alterações de Status = Confirmada;
+ 
 
 
 ---
@@ -46,60 +50,109 @@ _**IMPORTANTE**_
 
 ---
 
+
+---
+
+> Vou usar esse CSharp para esplicar os codigo que eu fiz
+
+---
 ```CSharp
-> Código funcional
-@foreach (var item in Model)
-               {
-                    <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
-                        <span class="info-block block-info clearfix">
-                            <span data-toggle="buttons" class="btn-group bizmoduleselect">
-                                <label class="btn btn-success">
-                                    @Html.DisplayFor(modelItem => item.Numero)
-                                    <span class="itemcontent">
-                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                    </span>
-                                </label>
-                            </span>
-                        </span>
-                    </div>
 
-> Quero o codigo assim, porem oa @if (item.StatusCota == 1) estão dando erro pelo fato de ser int
-> Me ajuda ai nesse codigo
+namespace OnlinePremios.Domain.Entities
+{
+    public class CompraItem : EntityBase
+    {
+        public CompraItem(int numero, decimal valor)
+        {
+            this.Numero = numero;
+            this.Valor = valor;
+        }
 
-@foreach (var item in Model)
-               {
-                    <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
-                        <span class="info-block block-info clearfix">
-                            <span data-toggle="buttons" class="btn-group bizmoduleselect">
-                                @if (modelItem == 1)
-                                {
-                                <label class="btn btn-success">
-                                    @Html.DisplayFor(modelItem => item.Numero)
-                                    <span class="itemcontent">
-                                        <input type="checkbox" name="var_id[]" id="@Html.DisplayFor(modelItem => item.Numero)" autocomplete="off" value="">
-                                    </span>
-                                </label>
-                                }
-                                @if (modelItem => item.Status=2)
-                                {
-                                <label class="btn btn-warning">
-                                    @Html.DisplayFor(modelItem => item.Numero)
-                                    <span class="itemcontent">
-                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                    </span>
-                                </label>
-                                }
-                                @if (modelItem => item.Status=3)
-                                {
-                                <label class="btn btn-danger">
-                                    @Html.DisplayFor(modelItem => item.Numero)
-                                    <span class="itemcontent">
-                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                    </span>
-                                </label>
-                                }
+        // to EF
+        public CompraItem() { }
 
-                            </span>
-                        </span>
-                    </div>
-                    ```
+        public int Numero { get; set; }
+        public decimal Valor { get; set; }
+        public Guid CompraId { get; set; }
+
+        public virtual Compra Compra { get; set; }
+
+    }
+}
+
+namespace OnlinePremios.Data.Mapping
+{
+    public class CompraItemMap : IEntityTypeConfiguration<CompraItem>
+    {
+        public void Configure(EntityTypeBuilder<CompraItem> builder)
+        {
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Numero).IsRequired().HasColumnName("Numero");
+            builder.Property(x => x.Valor).IsRequired().HasColumnName("Valor");
+
+            builder.ToTable("CompraItem");
+
+            // 1:N Compras : CompraItem
+            builder.HasOne(x => x.Compra)
+                .WithMany(x => x.CompraItems)
+                .HasForeignKey(x => x.CompraId);
+        }
+    }
+}
+
+
+
+namespace OnlinePremios.Repository
+{
+    public class CompraRepository : RepositoryGeneric<Compra, Guid>, ICompraRepository
+    {
+
+        private readonly OnlinePremiosContext _ctx;
+
+        public CompraRepository(OnlinePremiosContext context) : base(context)
+        {
+            this._ctx = context;
+        }
+
+        public async Task<IEnumerable<Compra>> ObterTodasAsComprasComSuasCotas()
+        {
+            return await _ctx.Compra.AsNoTracking().Include(f => f.Cotas).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId)
+        {
+            return await _ctx.Compra.AsNoTracking().Where(x => x.ClienteId == clienteId).ToListAsync();
+        }
+
+        public async Task<Compra> ObterUmaCompra(Guid id)
+        {
+            return await _ctx.Compra.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        }
+    }
+}
+
+
+namespace OnlinePremios.Domain.Interfaces.Repositories
+{
+    public interface ICompraItemRepository : IGenericRepository<CompraItem, Guid>
+    {
+
+        Task<IEnumerable<CompraItem>> ObterTodasAsCompraItemsDeUmaCompra(Guid compraId);
+        Task<IEnumerable<CompraItem>> ObterTodasAsCompraItemsComSuasCompras();
+        Task<CompraItem> ObterUmaCompraItemComSuaCompra(Guid id);
+    }
+
+}
+
+
+namespace OnlinePremios.Domain.Interfaces.Services
+{
+    public interface ICompraItemService : IDisposable
+    {
+        Task Adicionar(CompraItem compraItem);
+        Task Atualizar(CompraItem compraItem);
+        Task Remover(Guid id);
+    }
+}
+```
