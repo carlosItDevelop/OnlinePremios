@@ -39,10 +39,6 @@ namespace OnlinePremio.Mvc.ViewModels
         [DisplayName("Imagem do Produto")]
         public IFormFile ImagemUpload { get; set; } // Todo: Implementar apenas na ViewModel
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [Display(Name = "Galeria ID")]
-        public Guid GaleriaId { get; set; }
-        public virtual GaleriaViewModel Galeria { get; set; }
 
     }
 }

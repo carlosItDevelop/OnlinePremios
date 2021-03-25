@@ -1,15 +1,13 @@
 ﻿using OnlinePremios.Domain.Core;
 using OnlinePremios.Domain.Enum;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace OnlinePremios.Domain.Entities
 {
     public class Sorteio : EntityBase
     {
-        protected Sorteio(int numero, DateTime dataInicial, 
+        protected Sorteio(int numero, DateTime dataInicial,
             DateTime dataSorteio, int qtdeCotas, decimal valorCotas)
         {
             this.Numero = numero;
@@ -32,7 +30,7 @@ namespace OnlinePremios.Domain.Entities
 
         public virtual IEnumerable<Cota> Cota { get; private set; }
 
-        public void GerarCota (int numero, int QtdeCotas) 
+        public void GerarCota(int numero, int QtdeCotas)
         {
             List<Cota> cotas = new List<Cota>();
 
@@ -45,7 +43,7 @@ namespace OnlinePremios.Domain.Entities
                     Numero = i,
                     StatusCota = StatusCota.Disponivel,
                     Valor = ValorCotas
-                }) ;
+                });
                 //(int numero, Guid compraId, decimal valor)
             }
         }

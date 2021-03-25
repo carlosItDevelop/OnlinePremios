@@ -50,7 +50,7 @@ namespace OnlinePremios.Domain.Services
 
         public void Dispose()
         {
-            _sorteioRepository?.Dispose(); 
+            _sorteioRepository?.Dispose();
         }
 
         public void GerarCotas(int numero, int quantidade)

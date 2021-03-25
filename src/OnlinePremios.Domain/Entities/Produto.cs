@@ -5,12 +5,11 @@ namespace OnlinePremios.Domain.Entities
 {
     public class Produto : EntityBase
     {
-        public Produto(string nome, string imgUrl, string descricao, Guid galeriaId)
+        public Produto(string nome, string imgUrl, string descricao)
         {
             this.ImgURL = imgUrl;
             this.Descricao = descricao;
             this.Nome = nome;
-            this.GaleriaId = galeriaId;
         }
 
         // to EF
@@ -21,8 +20,6 @@ namespace OnlinePremios.Domain.Entities
 
         public string ImgURL { get; private set; }
 
-        public Guid GaleriaId { get; private set; }
-        public virtual Galeria Galeria { get; set; }
 
     }
 }

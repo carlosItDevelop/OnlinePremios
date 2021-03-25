@@ -18,6 +18,7 @@
   - [ ] Iniciar uma Compra;
       - [ ] Adicionar Cliente;
       - [ ] Associar Sorteio(s);
+      - [ ] Adicionar Cotas para a Compra / Cliente
       - [ ] Criar Checkout;
       - [ ] Alterações de Status;
       - [ ] Finalizar Compra;
