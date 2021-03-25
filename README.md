@@ -50,6 +50,13 @@ _**IMPORTANTE**_
 
 ---
 
+---
+
+> Vamos trabalhar com carrinho de compra para adicionar as cotas
+> fazer no codigo HTML o o jQuery para adicionar e remover do carrinho o CompraItem
+> Se no carrinho estiver aquele ID Remove se não Adiciona
+
+---
 
 ---
 
@@ -155,4 +162,6 @@ namespace OnlinePremios.Domain.Interfaces.Services
         Task Remover(Guid id);
     }
 }
+
+
 ```
