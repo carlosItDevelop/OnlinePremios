@@ -16,8 +16,8 @@ namespace OnlinePremios.Domain.Entities
             this.ClienteId = clienteId;
             this.DataCompra = dataCompra;
             this.QtdeCotas = qtdeCotas;
-            this.Cotas = new List<Cota>();
             this.StatusCompra = StatusCompra.AguardandoPagamento;
+            List<CompraItem> itens = new List<CompraItem>();
         }
 
         // to EF
@@ -30,7 +30,9 @@ namespace OnlinePremios.Domain.Entities
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; set; }
 
-        public virtual IEnumerable<Cota> Cotas { get; set; }
+        // Collections
+        public IEnumerable<CompraItem> CompraItens { get; set; }
+
 
     }
 }
