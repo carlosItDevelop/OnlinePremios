@@ -27,8 +27,12 @@
       - [ ] Finalizar Compra;
       - [ ] Confirma Pagamento da compra;
       - [ ] Alterações de Status = Confirmada;
- 
 
+
+_**MUDANÇA QUE FIZ NA PARTE BAIXA**_
+- [X] Mudei o nome de CotaVendida para CompraItem
+  - [ ] Acho que ja esta todos os codigos prontos;
+      - [ ] apenas analizar;
 
 ---
 
