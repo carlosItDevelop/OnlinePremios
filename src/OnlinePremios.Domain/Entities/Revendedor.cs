@@ -24,5 +24,10 @@ namespace OnlinePremios.Domain.Entities
         public string Email { get; private set; }
         public TipoPessoa TipoPessoa { get; private set; }
         public StatusRevendedor StatusRevendedor { get; private set; }
+
+        /*
+            Todo: Criar IService, Service, IRepository, Repository, Validation 
+         */
+
     }
 }

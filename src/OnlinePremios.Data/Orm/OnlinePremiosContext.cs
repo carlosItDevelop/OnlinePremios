@@ -50,6 +50,8 @@ namespace OnlinePremios.Data.Orm
 
         }
 
+        // Todo: this Overide SaveChangesAsync
+
         //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         //{
         //    foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
