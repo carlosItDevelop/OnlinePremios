@@ -11,7 +11,7 @@ namespace OnlinePremios.Domain.Entities
         public Endereco(){}
 
         /*
-            Todo: Criar IService, Service, IRepository, Repository, Validation         
+            Todo: Criar IService, Service, IRepository, Repository, Validation, ViewModel, Mapping, AutoMap, DI     
          */
 
     }

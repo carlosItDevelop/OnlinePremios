@@ -26,7 +26,7 @@ namespace OnlinePremios.Domain.Entities
         public StatusRevendedor StatusRevendedor { get; private set; }
 
         /*
-            Todo: Criar IService, Service, IRepository, Repository, Validation 
+            Todo: Criar IService, Service, IRepository, Repository, Validation, ViewModel, Mapping, AutoMap, DI 
          */
 
     }
