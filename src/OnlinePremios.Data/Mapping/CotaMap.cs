@@ -16,10 +16,10 @@ namespace OnlinePremios.Data.Mapping
 
             builder.ToTable("Cota");
 
-            // 1:N Compras : Cota
-            builder.HasOne(x => x.Compra)
-                .WithMany(x => x.Cotas)
-                .HasForeignKey(x => x.CompraId);
+            // 1:N Sorteio : Cota
+            builder.HasOne(x => x.Sorteio)
+                .WithMany(x => x.Cota)
+                .HasForeignKey(x => x.SorteioId);
         }
     }
 }
