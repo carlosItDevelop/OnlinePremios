@@ -42,7 +42,8 @@ namespace OnlinePremios.Domain.Entities
                 {
                     Numero = i,
                     StatusCota = StatusCota.Disponivel,
-                    Valor = ValorCotas
+                    Valor = ValorCotas,
+                    SorteioId = this.Id
                 });
                 //(int numero, Guid compraId, decimal valor)
             }

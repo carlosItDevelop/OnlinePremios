@@ -6,10 +6,9 @@ namespace OnlinePremios.Domain.Entities
 {
     public class Cota : EntityBase
     {
-        public Cota(int numero, decimal valor)
+        public Cota(int numero)
         {
             this.Numero = numero;
-            this.Valor = valor;
             this.StatusCota = StatusCota.Disponivel;
         }
 
@@ -19,9 +18,8 @@ namespace OnlinePremios.Domain.Entities
         public int Numero { get; set; }
         public decimal Valor { get; set; }
         public StatusCota StatusCota { get; set; }
-        public Guid CompraId { get; set; }
+        public Guid SorteioId { get; set; }
 
-        public virtual Compra Compra { get; set; }
         public virtual Sorteio Sorteio { get; set; }
 
     }

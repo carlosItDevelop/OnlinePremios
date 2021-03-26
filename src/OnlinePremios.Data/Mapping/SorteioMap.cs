@@ -27,6 +27,11 @@ namespace OnlinePremios.Data.Mapping
             builder.Property(x => x.ValorCotas).IsRequired().HasColumnName("ValorCotas");
 
 
+            // 1:N Sorteio : Cota
+            builder.HasMany(c => c.Cota)
+                .WithOne(s => s.Sorteio)
+                .HasForeignKey(fk => fk.SorteioId);
+
         }
     }
 }
