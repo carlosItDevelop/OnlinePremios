@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OnlinePremios.Domain.Entities;
+using OnlinePremios.Domain.Entities.bcRevendedor;
 
 namespace OnlinePremios.Data.Mapping
 {
