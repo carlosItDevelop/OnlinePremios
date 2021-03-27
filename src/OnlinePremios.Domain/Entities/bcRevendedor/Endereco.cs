@@ -1,7 +1,7 @@
 ﻿using OnlinePremios.Domain.Core;
 using System;
 
-namespace OnlinePremios.Domain.Entities
+namespace OnlinePremios.Domain.Entities.bcRevendedor
 {
     public class Endereco : EntityBase
     {

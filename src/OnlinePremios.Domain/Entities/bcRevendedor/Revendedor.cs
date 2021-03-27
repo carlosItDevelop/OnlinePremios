@@ -1,7 +1,7 @@
 ﻿using OnlinePremios.Domain.Core;
 using OnlinePremios.Domain.Enum;
 
-namespace OnlinePremios.Domain.Entities
+namespace OnlinePremios.Domain.Entities.bcRevendedor
 {
     public class Revendedor : EntityBase
     {
@@ -33,7 +33,7 @@ namespace OnlinePremios.Domain.Entities
 
 
         /*
-            Todo: Criar IService, Service, IRepository, Repository, Validation, ViewModel, Mapping, AutoMap, DI, ViewModel
+            Todo: Criar IService, Service, IRepository, Repository, Validation, (Mapping), AutoMap, DI, ViewModel
          */
 
     }
