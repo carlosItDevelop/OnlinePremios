@@ -13,6 +13,6 @@ namespace OnlinePremio.Mvc.Data
         public DbSet<OnlinePremios.Domain.Entities.Sorteio> Sorteio { get; set; }
         public DbSet<OnlinePremios.Domain.Entities.Cliente> Cliente { get; set; }
         public DbSet<OnlinePremios.Domain.Entities.Cota> Cota { get; set; }
-        public DbSet<OnlinePremios.Domain.Entities.Galeria> Galeria { get; set; }
+
     }
 }
