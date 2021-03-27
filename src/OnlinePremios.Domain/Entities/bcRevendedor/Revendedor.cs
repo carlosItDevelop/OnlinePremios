@@ -11,7 +11,7 @@ namespace OnlinePremios.Domain.Entities.bcRevendedor
         public Revendedor(string nome, string cpf, string email, string rg, TipoPessoa tipoPessoa, StatusRevendedor status)
         {
             this.Nome = nome;
-            this.cpf = cpf;
+            this.Cpf = cpf;
             this.Email = email;
             this.Rg = rg;
             this.TipoPessoa = tipoPessoa;
@@ -19,7 +19,7 @@ namespace OnlinePremios.Domain.Entities.bcRevendedor
         }
 
         public string Nome { get; private set; }
-        public string cpf { get; private set; }
+        public string Cpf { get; private set; }
         public string Rg { get; private set; }
         public string Email { get; private set; }
         public TipoPessoa TipoPessoa { get; private set; }
