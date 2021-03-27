@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using System;
 
 
 namespace OnlinePremios.Domain.Entities.Validations
@@ -18,7 +17,7 @@ namespace OnlinePremios.Domain.Entities.Validations
             RuleFor(f => f.StatusCota)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
-            RuleFor(f => f.CompraId)
+            RuleFor(f => f.SorteioId)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
 
