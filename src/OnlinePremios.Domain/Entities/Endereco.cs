@@ -9,7 +9,7 @@ namespace OnlinePremios.Domain.Entities
         public Endereco(){}
 
         /*
-            Todo: Criar IService, Service, IRepository, Repository, Validation, ViewModel, Mapping, AutoMap, DI, ViewModel   
+            Todo: Criar IService, Service, IRepository, Repository, Validation, Mapping, AutoMap, DI, (ViewModel)   
          */
 
         public Guid RevendedorId { get; set; }
