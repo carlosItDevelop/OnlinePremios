@@ -57,17 +57,17 @@
             width: 100%;
         }
 
-        .items-collection {
+        .itens-collection {
             margin: 0px 0 0 0;
-            align-items: initial;
+            align-itens: initial;
         }
 
-            .items-collection label.btn-success.active {
+            .itens-collection label.btn-success.active {
                 background-color: #ff0000;
                 color: #FFF;
             }
 
-            .items-collection label.btn-success {
+            .itens-collection label.btn-success {
                 width: 100%;
                 border: 2px solid #ff0000;
                 margin: 1px;
@@ -75,7 +75,7 @@
                 color: #FFF;
             }
 
-            .items-collection label.btn-default {
+            .itens-collection label.btn-default {
                 width: 100%;
                 border: 2px solid #5f5e5e;
                 margin: 1px;
@@ -83,7 +83,7 @@
                 color: #000;
             }
 
-            .items-collection label.btn-warning {
+            .itens-collection label.btn-warning {
                 width: 100%;
                 border: 2px solid #e0520a;
                 margin: 1px;
@@ -91,11 +91,11 @@
                 color: #FFF;
             }
 
-            .items-collection label .itemcontent {
+            .itens-collection label .itemcontent {
                 width: 100%;
             }
 
-            .items-collection .btn-group {
+            .itens-collection .btn-group {
                 width: 100%
             }
     </style>
@@ -115,13 +115,13 @@
         <hr />
         <div class="row">
             <div class="form-group">
-                <div class="items-collection row">
+                <div class="itens-collection row">
 
 
 
                     @foreach (var item in Model)
                {
-                    <div class="items col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
+                    <div class="itens col-xs-1 col-sm-1 col-md-1 col-lg-1" title="@Html.DisplayFor(modelItem => item.Compra.Cliente.Nome)">
                         <span class="info-block block-info clearfix">
                             <span data-toggle="buttons" class="btn-group bizmoduleselect">
                                 @*<label class="btn btn-success">
@@ -176,7 +176,7 @@
             <br>
             <div class="form-group">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <i class="fa fa-search fa-2x pull-left searchicon"></i><input type="search" class="form-control" id="search" placeholder="Filter items...">
+                    <i class="fa fa-search fa-2x pull-left searchicon"></i><input type="search" class="form-control" id="search" placeholder="Filter itens...">
                 </div>
             </div>
         </div>*@
@@ -187,8 +187,8 @@
             $(function () {
                 $('#search').on('keyup', function () {
                     var pattern = $(this).val();
-                    $('.items-collection .items').hide();
-                    $('.items-collection .items').filter(function () {
+                    $('.itens-collection .itens').hide();
+                    $('.itens-collection .itens').filter(function () {
                         return $(this).text().match(new RegExp(pattern, 'i'));
                     }).show();
                 });

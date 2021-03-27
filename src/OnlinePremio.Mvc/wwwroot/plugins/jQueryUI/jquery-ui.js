@@ -2145,7 +2145,7 @@ var menu = $.widget( "ui.menu", {
 		icons: {
 			submenu: "ui-icon-carat-1-e"
 		},
-		items: "> *",
+		itens: "> *",
 		menus: "ul",
 		position: {
 			my: "left-1 top",
@@ -2230,7 +2230,7 @@ var menu = $.widget( "ui.menu", {
 			focus: function( event, keepActiveItem ) {
 				// If there's already an active item, keep it active
 				// If not, activate the first item
-				var item = this.active || this.element.find( this.options.items ).eq( 0 );
+				var item = this.active || this.element.find( this.options.itens ).eq( 0 );
 
 				if ( !keepActiveItem ) {
 					this.focus( event, item );
@@ -2276,7 +2276,7 @@ var menu = $.widget( "ui.menu", {
 				.removeUniqueId()
 				.show();
 
-		// Destroy menu items
+		// Destroy menu itens
 		this.element.find( ".ui-menu-item" )
 			.removeClass( "ui-menu-item" )
 			.removeAttr( "role" )
@@ -2349,7 +2349,7 @@ var menu = $.widget( "ui.menu", {
 				character = prev + character;
 			}
 
-			match = this._filterMenuItems( character );
+			match = this._filterMenuItens( character );
 			match = skip && match.index( this.active.next() ) !== -1 ?
 				this.active.nextAll( ".ui-menu-item" ) :
 				match;
@@ -2358,7 +2358,7 @@ var menu = $.widget( "ui.menu", {
 			// to move down the menu to the first item that starts with that character
 			if ( !match.length ) {
 				character = String.fromCharCode( event.keyCode );
-				match = this._filterMenuItems( character );
+				match = this._filterMenuItens( character );
 			}
 
 			if ( match.length ) {
@@ -2388,7 +2388,7 @@ var menu = $.widget( "ui.menu", {
 	},
 
 	refresh: function() {
-		var menus, items,
+		var menus, itens,
 			that = this,
 			icon = this.options.icons.submenu,
 			submenus = this.element.find( this.options.menus );
@@ -2418,18 +2418,18 @@ var menu = $.widget( "ui.menu", {
 			});
 
 		menus = submenus.add( this.element );
-		items = menus.find( this.options.items );
+		itens = menus.find( this.options.itens );
 
-		// Initialize menu-items containing spaces and/or dashes only as dividers
-		items.not( ".ui-menu-item" ).each(function() {
+		// Initialize menu-itens containing spaces and/or dashes only as dividers
+		itens.not( ".ui-menu-item" ).each(function() {
 			var item = $( this );
 			if ( that._isDivider( item ) ) {
 				item.addClass( "ui-widget-content ui-menu-divider" );
 			}
 		});
 
-		// Don't refresh list items that are already adapted
-		items.not( ".ui-menu-item, .ui-menu-divider" )
+		// Don't refresh list itens that are already adapted
+		itens.not( ".ui-menu-item, .ui-menu-divider" )
 			.addClass( "ui-menu-item" )
 			.uniqueId()
 			.attr({
@@ -2438,7 +2438,7 @@ var menu = $.widget( "ui.menu", {
 			});
 
 		// Add aria-disabled attribute to any disabled menu item
-		items.filter( ".ui-state-disabled" ).attr( "aria-disabled", "true" );
+		itens.filter( ".ui-state-disabled" ).attr( "aria-disabled", "true" );
 
 		// If the active item has been removed, blur the menu
 		if ( this.active && !$.contains( this.element[ 0 ], this.active[ 0 ] ) ) {
@@ -2628,7 +2628,7 @@ var menu = $.widget( "ui.menu", {
 		var newItem = this.active &&
 			this.active
 				.children( ".ui-menu " )
-				.find( this.options.items )
+				.find( this.options.itens )
 				.first();
 
 		if ( newItem && newItem.length ) {
@@ -2671,7 +2671,7 @@ var menu = $.widget( "ui.menu", {
 			}
 		}
 		if ( !next || !next.length || !this.active ) {
-			next = this.activeMenu.find( this.options.items )[ filter ]();
+			next = this.activeMenu.find( this.options.itens )[ filter ]();
 		}
 
 		this.focus( event, next );
@@ -2697,7 +2697,7 @@ var menu = $.widget( "ui.menu", {
 
 			this.focus( event, item );
 		} else {
-			this.focus( event, this.activeMenu.find( this.options.items )
+			this.focus( event, this.activeMenu.find( this.options.itens )
 				[ !this.active ? "first" : "last" ]() );
 		}
 	},
@@ -2721,7 +2721,7 @@ var menu = $.widget( "ui.menu", {
 
 			this.focus( event, item );
 		} else {
-			this.focus( event, this.activeMenu.find( this.options.items ).first() );
+			this.focus( event, this.activeMenu.find( this.options.itens ).first() );
 		}
 	},
 
@@ -2740,14 +2740,14 @@ var menu = $.widget( "ui.menu", {
 		this._trigger( "select", event, ui );
 	},
 
-	_filterMenuItems: function(character) {
+	_filterMenuItens: function(character) {
 		var escapedCharacter = character.replace( /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" ),
 			regex = new RegExp( "^" + escapedCharacter, "i" );
 
 		return this.activeMenu
-			.find( this.options.items )
+			.find( this.options.itens )
 
-			// Only match on items, not dividers or other content (#10571)
+			// Only match on itens, not dividers or other content (#10571)
 			.filter( ".ui-menu-item" )
 			.filter(function() {
 				return regex.test( $.trim( $( this ).text() ) );
@@ -2986,7 +2986,7 @@ $.widget( "ui.autocomplete", {
 			menufocus: function( event, ui ) {
 				var label, item;
 				// support: Firefox
-				// Prevent accidental activation of menu items in Firefox (#7024 #9118)
+				// Prevent accidental activation of menu itens in Firefox (#7024 #9118)
 				if ( this.isNewMenu ) {
 					this.isNewMenu = false;
 					if ( event.originalEvent && /^mouse/.test( event.originalEvent.type ) ) {
@@ -3225,12 +3225,12 @@ $.widget( "ui.autocomplete", {
 		}
 	},
 
-	_normalize: function( items ) {
-		// assume all items have the right format when the first item is complete
-		if ( items.length && items[ 0 ].label && items[ 0 ].value ) {
-			return items;
+	_normalize: function( itens ) {
+		// assume all itens have the right format when the first item is complete
+		if ( itens.length && itens[ 0 ].label && itens[ 0 ].value ) {
+			return itens;
 		}
-		return $.map( items, function( item ) {
+		return $.map( itens, function( item ) {
 			if ( typeof item === "string" ) {
 				return {
 					label: item,
@@ -3244,9 +3244,9 @@ $.widget( "ui.autocomplete", {
 		});
 	},
 
-	_suggest: function( items ) {
+	_suggest: function( itens ) {
 		var ul = this.menu.element.empty();
-		this._renderMenu( ul, items );
+		this._renderMenu( ul, itens );
 		this.isNewMenu = true;
 		this.menu.refresh();
 
@@ -3272,9 +3272,9 @@ $.widget( "ui.autocomplete", {
 		) );
 	},
 
-	_renderMenu: function( ul, items ) {
+	_renderMenu: function( ul, itens ) {
 		var that = this;
-		$.each( items, function( index, item ) {
+		$.each( itens, function( index, item ) {
 			that._renderItemData( ul, item );
 		});
 	},
@@ -3706,7 +3706,7 @@ $.widget( "ui.button", {
 $.widget( "ui.buttonset", {
 	version: "1.11.4",
 	options: {
-		items: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :data(ui-button)"
+		itens: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :data(ui-button)"
 	},
 
 	_create: function() {
@@ -3727,7 +3727,7 @@ $.widget( "ui.buttonset", {
 
 	refresh: function() {
 		var rtl = this.element.css( "direction" ) === "rtl",
-			allButtons = this.element.find( this.options.items ),
+			allButtons = this.element.find( this.options.itens ),
 			existingButtons = allButtons.filter( ":ui-button" );
 
 		// Initialize new buttons
@@ -6827,7 +6827,7 @@ $.ui.plugin.add("draggable", "snap", {
 
 		i.snapElements = [];
 
-		$(o.snap.constructor !== String ? ( o.snap.items || ":data(ui-draggable)" ) : o.snap).each(function() {
+		$(o.snap.constructor !== String ? ( o.snap.itens || ":data(ui-draggable)" ) : o.snap).each(function() {
 			var $t = $(this),
 				$o = $t.offset();
 			if (this !== i.element[0]) {
@@ -12279,9 +12279,9 @@ var selectmenu = $.widget( "ui.selectmenu", {
 		this._on( this.button, this._buttonEvents );
 		this.button.one( "focusin", function() {
 
-			// Delay rendering the menu items until the button receives focus.
+			// Delay rendering the menu itens until the button receives focus.
 			// The menu may have already been rendered via a programmatic open.
-			if ( !that.menuItems ) {
+			if ( !that.menuItens ) {
 				that._refreshMenu();
 			}
 		});
@@ -12333,7 +12333,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 					that.focusIndex = item.index;
 
 					that.button.attr( "aria-activedescendant",
-						that.menuItems.eq( item.index ).attr( "id" ) );
+						that.menuItens.eq( item.index ).attr( "id" ) );
 				}
 			})
 			.menu( "instance" );
@@ -12351,7 +12351,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 			return false;
 		};
 
-		// Selects often contain empty items, but never contain dividers
+		// Selects often contain empty itens, but never contain dividers
 		this.menuInstance._isDivider = function() {
 			return false;
 		};
@@ -12376,10 +12376,10 @@ var selectmenu = $.widget( "ui.selectmenu", {
 		}
 
 		this._parseOptions( options );
-		this._renderMenu( this.menu, this.items );
+		this._renderMenu( this.menu, this.itens );
 
 		this.menuInstance.refresh();
-		this.menuItems = this.menu.find( "li" ).not( ".ui-selectmenu-optgroup" );
+		this.menuItens = this.menu.find( "li" ).not( ".ui-selectmenu-optgroup" );
 
 		item = this._getSelectedItem();
 
@@ -12396,8 +12396,8 @@ var selectmenu = $.widget( "ui.selectmenu", {
 			return;
 		}
 
-		// If this is the first time the menu is being opened, render the items
-		if ( !this.menuItems ) {
+		// If this is the first time the menu is being opened, render the itens
+		if ( !this.menuItens ) {
 			this._refreshMenu();
 		} else {
 
@@ -12442,11 +12442,11 @@ var selectmenu = $.widget( "ui.selectmenu", {
 		return this.menu;
 	},
 
-	_renderMenu: function( ul, items ) {
+	_renderMenu: function( ul, itens ) {
 		var that = this,
 			currentOptgroup = "";
 
-		$.each( items, function( index, item ) {
+		$.each( itens, function( index, item ) {
 			if ( item.optgroup !== currentOptgroup ) {
 				$( "<li>", {
 					"class": "ui-selectmenu-optgroup ui-menu-divider" +
@@ -12492,9 +12492,9 @@ var selectmenu = $.widget( "ui.selectmenu", {
 			filter = ".ui-menu-item";
 
 		if ( this.isOpen ) {
-			item = this.menuItems.eq( this.focusIndex );
+			item = this.menuItens.eq( this.focusIndex );
 		} else {
-			item = this.menuItems.eq( this.element[ 0 ].selectedIndex );
+			item = this.menuItens.eq( this.element[ 0 ].selectedIndex );
 			filter += ":not(.ui-state-disabled)";
 		}
 
@@ -12510,7 +12510,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	},
 
 	_getSelectedItem: function() {
-		return this.menuItems.eq( this.element[ 0 ].selectedIndex );
+		return this.menuItens.eq( this.element[ 0 ].selectedIndex );
 	},
 
 	_toggle: function( event ) {
@@ -12635,7 +12635,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	},
 
 	_selectFocusedItem: function( event ) {
-		var item = this.menuItems.eq( this.focusIndex );
+		var item = this.menuItens.eq( this.focusIndex );
 		if ( !item.hasClass( "ui-state-disabled" ) ) {
 			this._select( item.data( "ui-selectmenu-item" ), event );
 		}
@@ -12658,7 +12658,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	},
 
 	_setAria: function( item ) {
-		var id = this.menuItems.eq( item.index ).attr( "id" );
+		var id = this.menuItens.eq( item.index ).attr( "id" );
 
 		this.button.attr({
 			"aria-labelledby": id,
@@ -12769,7 +12769,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 				disabled: optgroup.prop( "disabled" ) || option.prop( "disabled" )
 			});
 		});
-		this.items = data;
+		this.itens = data;
 	},
 
 	_destroy: function() {
@@ -13513,7 +13513,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		grid: false,
 		handle: false,
 		helper: "original",
-		items: "> *",
+		itens: "> *",
 		opacity: false,
 		placeholder: false,
 		revert: false,
@@ -13551,7 +13551,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		this.containerCache = {};
 		this.element.addClass("ui-sortable");
 
-		//Get the items
+		//Get the itens
 		this.refresh();
 
 		//Let's determine the parent's offset
@@ -13577,7 +13577,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	_setHandleClassName: function() {
 		this.element.find( ".ui-sortable-handle" ).removeClass( "ui-sortable-handle" );
-		$.each( this.items, function() {
+		$.each( this.itens, function() {
 			( this.instance.options.handle ?
 				this.item.find( this.instance.options.handle ) : this.item )
 				.addClass( "ui-sortable-handle" );
@@ -13591,8 +13591,8 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 				.removeClass( "ui-sortable-handle" );
 		this._mouseDestroy();
 
-		for ( var i = this.items.length - 1; i >= 0; i-- ) {
-			this.items[i].item.removeData(this.widgetName + "-item");
+		for ( var i = this.itens.length - 1; i >= 0; i-- ) {
+			this.itens[i].item.removeData(this.widgetName + "-item");
 		}
 
 		return this;
@@ -13611,10 +13611,10 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			return false;
 		}
 
-		//We have to refresh the items data once first
-		this._refreshItems(event);
+		//We have to refresh the itens data once first
+		this._refreshItens(event);
 
-		//Find out if the clicked node (or one of its parents) is a actual item in this.items
+		//Find out if the clicked node (or one of its parents) is a actual item in this.itens
 		$(event.target).parents().each(function() {
 			if($.data(this, that.widgetName + "-item") === that) {
 				currentItem = $(this);
@@ -13640,7 +13640,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		}
 
 		this.currentItem = currentItem;
-		this._removeCurrentsFromItems();
+		this._removeCurrentsFromItens();
 		return true;
 
 	},
@@ -13652,7 +13652,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 		this.currentContainer = this;
 
-		//We only need to call refreshPositions, because the refreshItems call has been moved to mouseCapture
+		//We only need to call refreshPositions, because the refreshItens call has been moved to mouseCapture
 		this.refreshPositions();
 
 		//Create and append the visible helper
@@ -13841,10 +13841,10 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		}
 
 		//Rearrange
-		for (i = this.items.length - 1; i >= 0; i--) {
+		for (i = this.itens.length - 1; i >= 0; i--) {
 
 			//Cache variables and intersection, continue if no intersection
-			item = this.items[i];
+			item = this.itens[i];
 			itemElement = item.item[0];
 			intersection = this._intersectsWithPointer(item);
 			if (!intersection) {
@@ -13852,11 +13852,11 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			}
 
 			// Only put the placeholder inside the current Container, skip all
-			// items from other containers. This works because when moving
+			// itens from other containers. This works because when moving
 			// an item from one container to another the
 			// currentContainer is switched before the placeholder is moved.
 			//
-			// Without this, moving items in "sub-sortables" can cause
+			// Without this, moving itens in "sub-sortables" can cause
 			// the placeholder to jitter between the outer and inner container.
 			if (item.instance !== this.currentContainer) {
 				continue;
@@ -13987,11 +13987,11 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	serialize: function(o) {
 
-		var items = this._getItemsAsjQuery(o && o.connected),
+		var itens = this._getItensAsjQuery(o && o.connected),
 			str = [];
 		o = o || {};
 
-		$(items).each(function() {
+		$(itens).each(function() {
 			var res = ($(o.item || this).attr(o.attribute || "id") || "").match(o.expression || (/(.+)[\-=_](.+)/));
 			if (res) {
 				str.push((o.key || res[1]+"[]")+"="+(o.key && o.expression ? res[1] : res[2]));
@@ -14008,12 +14008,12 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	toArray: function(o) {
 
-		var items = this._getItemsAsjQuery(o && o.connected),
+		var itens = this._getItensAsjQuery(o && o.connected),
 			ret = [];
 
 		o = o || {};
 
-		items.each(function() { ret.push($(o.item || this).attr(o.attribute || "id") || ""); });
+		itens.each(function() { ret.push($(o.item || this).attr(o.attribute || "id") || ""); });
 		return ret;
 
 	},
@@ -14094,7 +14094,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 	},
 
 	refresh: function(event) {
-		this._refreshItems(event);
+		this._refreshItens(event);
 		this._setHandleClassName();
 		this.refreshPositions();
 		return this;
@@ -14105,10 +14105,10 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		return options.connectWith.constructor === String ? [options.connectWith] : options.connectWith;
 	},
 
-	_getItemsAsjQuery: function(connected) {
+	_getItensAsjQuery: function(connected) {
 
 		var i, j, cur, inst,
-			items = [],
+			itens = [],
 			queries = [],
 			connectWith = this._connectWith();
 
@@ -14118,30 +14118,30 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 				for ( j = cur.length - 1; j >= 0; j--){
 					inst = $.data(cur[j], this.widgetFullName);
 					if(inst && inst !== this && !inst.options.disabled) {
-						queries.push([$.isFunction(inst.options.items) ? inst.options.items.call(inst.element) : $(inst.options.items, inst.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), inst]);
+						queries.push([$.isFunction(inst.options.itens) ? inst.options.itens.call(inst.element) : $(inst.options.itens, inst.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), inst]);
 					}
 				}
 			}
 		}
 
-		queries.push([$.isFunction(this.options.items) ? this.options.items.call(this.element, null, { options: this.options, item: this.currentItem }) : $(this.options.items, this.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), this]);
+		queries.push([$.isFunction(this.options.itens) ? this.options.itens.call(this.element, null, { options: this.options, item: this.currentItem }) : $(this.options.itens, this.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), this]);
 
-		function addItems() {
-			items.push( this );
+		function addItens() {
+			itens.push( this );
 		}
 		for (i = queries.length - 1; i >= 0; i--){
-			queries[i][0].each( addItems );
+			queries[i][0].each( addItens );
 		}
 
-		return $(items);
+		return $(itens);
 
 	},
 
-	_removeCurrentsFromItems: function() {
+	_removeCurrentsFromItens: function() {
 
 		var list = this.currentItem.find(":data(" + this.widgetName + "-item)");
 
-		this.items = $.grep(this.items, function (item) {
+		this.itens = $.grep(this.itens, function (item) {
 			for (var j=0; j < list.length; j++) {
 				if(list[j] === item.item[0]) {
 					return false;
@@ -14152,14 +14152,14 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	},
 
-	_refreshItems: function(event) {
+	_refreshItens: function(event) {
 
-		this.items = [];
+		this.itens = [];
 		this.containers = [this];
 
 		var i, j, cur, inst, targetData, _queries, item, queriesLength,
-			items = this.items,
-			queries = [[$.isFunction(this.options.items) ? this.options.items.call(this.element[0], event, { item: this.currentItem }) : $(this.options.items, this.element), this]],
+			itens = this.itens,
+			queries = [[$.isFunction(this.options.itens) ? this.options.itens.call(this.element[0], event, { item: this.currentItem }) : $(this.options.itens, this.element), this]],
 			connectWith = this._connectWith();
 
 		if(connectWith && this.ready) { //Shouldn't be run the first time through due to massive slow-down
@@ -14168,7 +14168,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 				for (j = cur.length - 1; j >= 0; j--){
 					inst = $.data(cur[j], this.widgetFullName);
 					if(inst && inst !== this && !inst.options.disabled) {
-						queries.push([$.isFunction(inst.options.items) ? inst.options.items.call(inst.element[0], event, { item: this.currentItem }) : $(inst.options.items, inst.element), inst]);
+						queries.push([$.isFunction(inst.options.itens) ? inst.options.itens.call(inst.element[0], event, { item: this.currentItem }) : $(inst.options.itens, inst.element), inst]);
 						this.containers.push(inst);
 					}
 				}
@@ -14184,7 +14184,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 				item.data(this.widgetName + "-item", targetData); // Data for target checking (mouse manager)
 
-				items.push({
+				itens.push({
 					item: item,
 					instance: targetData,
 					width: 0, height: 0,
@@ -14197,9 +14197,9 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	refreshPositions: function(fast) {
 
-		// Determine whether items are being displayed horizontally
-		this.floating = this.items.length ?
-			this.options.axis === "x" || this._isFloating( this.items[ 0 ].item ) :
+		// Determine whether itens are being displayed horizontally
+		this.floating = this.itens.length ?
+			this.options.axis === "x" || this._isFloating( this.itens[ 0 ].item ) :
 			false;
 
 		//This has to be redone because due to the item being moved out/into the offsetParent, the offsetParent's position will change
@@ -14209,8 +14209,8 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 		var i, item, t, p;
 
-		for (i = this.items.length - 1; i >= 0; i--){
-			item = this.items[i];
+		for (i = this.itens.length - 1; i >= 0; i--){
+			item = this.itens[i];
 
 			//We ignore calculating positions of all connected containers when we're not over them
 			if(item.instance !== this.currentContainer && this.currentContainer && item.item[0] !== this.currentItem[0]) {
@@ -14366,23 +14366,23 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			sizeProperty = floating ? "width" : "height";
 			axis = floating ? "clientX" : "clientY";
 
-			for (j = this.items.length - 1; j >= 0; j--) {
-				if(!$.contains(this.containers[innermostIndex].element[0], this.items[j].item[0])) {
+			for (j = this.itens.length - 1; j >= 0; j--) {
+				if(!$.contains(this.containers[innermostIndex].element[0], this.itens[j].item[0])) {
 					continue;
 				}
-				if(this.items[j].item[0] === this.currentItem[0]) {
+				if(this.itens[j].item[0] === this.currentItem[0]) {
 					continue;
 				}
 
-				cur = this.items[j].item.offset()[posProperty];
+				cur = this.itens[j].item.offset()[posProperty];
 				nearBottom = false;
-				if ( event[ axis ] - cur > this.items[ j ][ sizeProperty ] / 2 ) {
+				if ( event[ axis ] - cur > this.itens[ j ][ sizeProperty ] / 2 ) {
 					nearBottom = true;
 				}
 
 				if ( Math.abs( event[ axis ] - cur ) < dist ) {
 					dist = Math.abs( event[ axis ] - cur );
-					itemWithLeastDistance = this.items[ j ];
+					itemWithLeastDistance = this.itens[ j ];
 					this.direction = nearBottom ? "up": "down";
 				}
 			}
@@ -14695,7 +14695,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			delayedTriggers.push(function(event) { this._trigger("update", event, this._uiHash()); }); //Trigger update callback if the DOM position has changed
 		}
 
-		// Check if the items Container has Changed and trigger appropriate
+		// Check if the itens Container has Changed and trigger appropriate
 		// events.
 		if (this !== this.currentContainer) {
 			if(!noPropagation) {
@@ -16179,7 +16179,7 @@ var tooltip = $.widget( "ui.tooltip", {
 		},
 		hide: true,
 		// Disabled elements have inconsistent behavior across browsers (#8661)
-		items: "[title]:not([disabled])",
+		itens: "[title]:not([disabled])",
 		position: {
 			my: "left top+15",
 			at: "left bottom",
@@ -16277,7 +16277,7 @@ var tooltip = $.widget( "ui.tooltip", {
 		});
 
 		// remove title attributes to prevent native tooltips
-		this.element.find( this.options.items ).addBack().each(function() {
+		this.element.find( this.options.itens ).addBack().each(function() {
 			var element = $( this );
 			if ( element.is( "[title]" ) ) {
 				element
@@ -16289,7 +16289,7 @@ var tooltip = $.widget( "ui.tooltip", {
 
 	_enable: function() {
 		// restore title attributes
-		this.element.find( this.options.items ).addBack().each(function() {
+		this.element.find( this.options.itens ).addBack().each(function() {
 			var element = $( this );
 			if ( element.data( "ui-tooltip-title" ) ) {
 				element.attr( "title", element.data( "ui-tooltip-title" ) );
@@ -16302,7 +16302,7 @@ var tooltip = $.widget( "ui.tooltip", {
 			target = $( event ? event.target : this.element )
 				// we need closest here due to mouseover bubbling,
 				// but always pointing at the same event target
-				.closest( this.options.items );
+				.closest( this.options.itens );
 
 		// No element to show a tooltip for or the tooltip is already open
 		if ( !target.length || target.data( "ui-tooltip-id" ) ) {

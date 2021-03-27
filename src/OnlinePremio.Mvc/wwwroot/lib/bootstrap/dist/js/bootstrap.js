@@ -634,7 +634,7 @@
   /*#__PURE__*/
   function () {
     function Carousel(element, config) {
-      this._items = null;
+      this._itens = null;
       this._interval = null;
       this._activeElement = null;
       this._isPaused = false;
@@ -711,7 +711,7 @@
 
       var activeIndex = this._getItemIndex(this._activeElement);
 
-      if (index > this._items.length - 1 || index < 0) {
+      if (index > this._itens.length - 1 || index < 0) {
         return;
       }
 
@@ -730,13 +730,13 @@
 
       var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
 
-      this._slide(direction, this._items[index]);
+      this._slide(direction, this._itens[index]);
     };
 
     _proto.dispose = function dispose() {
       $(this._element).off(EVENT_KEY$2);
       $.removeData(this._element, DATA_KEY$2);
-      this._items = null;
+      this._itens = null;
       this._config = null;
       this._element = null;
       this._interval = null;
@@ -892,8 +892,8 @@
     };
 
     _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector$2.ITEM)) : [];
-      return this._items.indexOf(element);
+      this._itens = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector$2.ITEM)) : [];
+      return this._itens.indexOf(element);
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
@@ -902,7 +902,7 @@
 
       var activeIndex = this._getItemIndex(activeElement);
 
-      var lastItemIndex = this._items.length - 1;
+      var lastItemIndex = this._itens.length - 1;
       var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
 
       if (isGoingToWrap && !this._config.wrap) {
@@ -910,8 +910,8 @@
       }
 
       var delta = direction === Direction.PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
-      return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
+      var itemIndex = (activeIndex + delta) % this._itens.length;
+      return itemIndex === -1 ? this._itens[this._itens.length - 1] : this._itens[itemIndex];
     };
 
     _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
@@ -1955,20 +1955,20 @@
         return;
       }
 
-      var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS));
+      var itens = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS));
 
-      if (items.length === 0) {
+      if (itens.length === 0) {
         return;
       }
 
-      var index = items.indexOf(event.target);
+      var index = itens.indexOf(event.target);
 
       if (event.which === ARROW_UP_KEYCODE && index > 0) {
         // Up
         index--;
       }
 
-      if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) {
+      if (event.which === ARROW_DOWN_KEYCODE && index < itens.length - 1) {
         // Down
         index++;
       }
@@ -1977,7 +1977,7 @@
         index = 0;
       }
 
-      items[index].focus();
+      itens[index].focus();
     };
 
     _createClass(Dropdown, null, [{
