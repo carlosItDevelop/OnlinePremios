@@ -41,6 +41,9 @@ namespace OnlinePremio.Mvc
 
             services.AddMsgMvcConfiguration();
 
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

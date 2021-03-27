@@ -17,7 +17,7 @@ namespace OnlinePremios.Domain.Entities
             this.DataCompra = dataCompra;
             this.QtdeCotas = qtdeCotas;
             this.StatusCompra = StatusCompra.AguardandoPagamento;
-            List<CompraItem> itens = new List<CompraItem>();
+            _ = new List<CompraItem>();
         }
 
         // to EF
