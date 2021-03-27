@@ -9,9 +9,9 @@ namespace OnlinePremios.Domain.Interfaces.Repositories
     public interface ICotaRepository : IGenericRepository<Cota, Guid>
     {
 
-        Task<IEnumerable<Cota>> ObterTodasAsCotasDeUmaCompra(Guid compraId);
-        Task<IEnumerable<Cota>> ObterTodasAsCotasComSuasCompras();
-        Task<Cota> ObterUmaCotaComSuaCompra(Guid id);
+        Task<IEnumerable<Cota>> ObterTodasAsCotasDeUmSorteio(Sorteio sorteio);
+        Task<IEnumerable<Cota>> ObterTodasAsCotasComSeusSorteios();
+        Task<Cota> ObterUmaCotaComSeuSorteio(Guid id);
     }
 
 }
