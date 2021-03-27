@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,26 +10,23 @@ using OnlinePremios.Domain.Entities;
 
 namespace OnlinePremio.Mvc.Controllers
 {
-    
-    public class CotaController : Controller
+    public class CompraController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CotaController(ApplicationDbContext context)
+        public CompraController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Cota
+        // GET: Compra
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cota.Include(c => c.Compra).Include(cli => cli.Compra.Cliente).OrderBy(o => o.Numero);
-            //var applicationDbContext = _context.Cota.OrderBy(o => o.Numero);
+            var applicationDbContext = _context.Compra.Include(c => c.Cliente);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Cota/Details/5
-        [Authorize]
+        // GET: Compra/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -38,46 +34,43 @@ namespace OnlinePremio.Mvc.Controllers
                 return NotFound();
             }
 
-            var cota = await _context.Cota
-                .Include(c => c.Sorteio)
+            var compra = await _context.Compra
+                .Include(c => c.Cliente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cota == null)
+            if (compra == null)
             {
                 return NotFound();
             }
 
-            return View(cota);
+            return View(compra);
         }
 
-        // GET: Cota/Create
-        [Authorize]
+        // GET: Compra/Create
         public IActionResult Create()
         {
-            ViewData["CompraId"] = new SelectList(_context.Set<Compra>(), "Id", "Id");
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id");
             return View();
         }
 
-        // POST: Cota/Create
+        // POST: Compra/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Numero,Valor,StatusCota,CompraId,Id,DataCadastro,DataAtualizacao,UserUpdate")] Cota cota)
+        public async Task<IActionResult> Create([Bind("DataCompra,QtdeCotas,StatusCompra,ClienteId,Id,DataCadastro,DataAtualizacao,UserUpdate")] Compra compra)
         {
             if (ModelState.IsValid)
             {
-                cota.Id = Guid.NewGuid();
-                _context.Add(cota);
+                compra.Id = Guid.NewGuid();
+                _context.Add(compra);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompraId"] = new SelectList(_context.Set<Compra>(), "Id", "Id", cota.CompraId);
-            return View(cota);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", compra.ClienteId);
+            return View(compra);
         }
 
-        // GET: Cota/Edit/5
-        [Authorize]
+        // GET: Compra/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -85,24 +78,23 @@ namespace OnlinePremio.Mvc.Controllers
                 return NotFound();
             }
 
-            var cota = await _context.Cota.FindAsync(id);
-            if (cota == null)
+            var compra = await _context.Compra.FindAsync(id);
+            if (compra == null)
             {
                 return NotFound();
             }
-            ViewData["CompraId"] = new SelectList(_context.Set<Compra>(), "Id", "Id", cota.CompraId);
-            return View(cota);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", compra.ClienteId);
+            return View(compra);
         }
 
-        // POST: Cota/Edit/5
+        // POST: Compra/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Numero,Valor,StatusCota,CompraId,Id,DataCadastro,DataAtualizacao,UserUpdate")] Cota cota)
+        public async Task<IActionResult> Edit(Guid id, [Bind("DataCompra,QtdeCotas,StatusCompra,ClienteId,Id,DataCadastro,DataAtualizacao,UserUpdate")] Compra compra)
         {
-            if (id != cota.Id)
+            if (id != compra.Id)
             {
                 return NotFound();
             }
@@ -111,12 +103,12 @@ namespace OnlinePremio.Mvc.Controllers
             {
                 try
                 {
-                    _context.Update(cota);
+                    _context.Update(compra);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CotaExists(cota.Id))
+                    if (!CompraExists(compra.Id))
                     {
                         return NotFound();
                     }
@@ -127,12 +119,11 @@ namespace OnlinePremio.Mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompraId"] = new SelectList(_context.Set<Compra>(), "Id", "Id", cota.CompraId);
-            return View(cota);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", compra.ClienteId);
+            return View(compra);
         }
 
-        // GET: Cota/Delete/5
-        [Authorize]
+        // GET: Compra/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -140,32 +131,31 @@ namespace OnlinePremio.Mvc.Controllers
                 return NotFound();
             }
 
-            var cota = await _context.Cota
-                .Include(c => c.Compra)
+            var compra = await _context.Compra
+                .Include(c => c.Cliente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cota == null)
+            if (compra == null)
             {
                 return NotFound();
             }
 
-            return View(cota);
+            return View(compra);
         }
 
-        // POST: Cota/Delete/5
-        [Authorize]
+        // POST: Compra/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var cota = await _context.Cota.FindAsync(id);
-            _context.Cota.Remove(cota);
+            var compra = await _context.Compra.FindAsync(id);
+            _context.Compra.Remove(compra);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CotaExists(Guid id)
+        private bool CompraExists(Guid id)
         {
-            return _context.Cota.Any(e => e.Id == id);
+            return _context.Compra.Any(e => e.Id == id);
         }
     }
 }

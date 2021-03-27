@@ -5,7 +5,7 @@ using OnlinePremio.Mvc.ViewModels;
 
 namespace OnlinePremio.Mvc.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -21,6 +21,10 @@ namespace OnlinePremio.Mvc.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Pagamento()
         {
             return View();
         }

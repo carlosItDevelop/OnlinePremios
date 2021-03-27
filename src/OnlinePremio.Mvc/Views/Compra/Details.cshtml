@@ -1,0 +1,60 @@
+﻿@model OnlinePremios.Domain.Entities.Compra
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCompra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCompra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdeCotas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QtdeCotas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusCompra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusCompra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAtualizacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAtualizacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserUpdate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
