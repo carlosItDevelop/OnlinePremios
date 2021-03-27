@@ -18,9 +18,9 @@ namespace OnlinePremios.Repository
             this._ctx = context;
         }
 
-        public virtual async Task<IEnumerable<Cota>> ObterTodasAsCotasComSuasCompras()
+        public virtual async Task<IEnumerable<Cota>> ObterTodasAsCotasComSeusSorteios()
         {
-            return await _ctx.Cota.AsNoTracking().Include(f => f.Compra)
+            return await _ctx.Cota.AsNoTracking().Include(f => f.Sorteio)
                 .OrderBy(p => p.DataCadastro).ToListAsync();
         }
 
