@@ -25,6 +25,13 @@ namespace OnlinePremios.Domain.Entities
         public TipoPessoa TipoPessoa { get; private set; }
         public StatusRevendedor StatusRevendedor { get; private set; }
 
+        public Endereco Endereco { get; set; }
+
+        /* EF Relations */
+        //public IEnumerable<Sorteio> Sorteios { get; set; }
+
+
+
         /*
             Todo: Criar IService, Service, IRepository, Repository, Validation, ViewModel, Mapping, AutoMap, DI, ViewModel
          */
