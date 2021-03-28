@@ -73,6 +73,13 @@ namespace OnlinePremio.Mvc
 
             app.UseGlobalizationConfig();
 
+            ////
+            //app.UseSession();
+            //app.Run(async(context)) =>{
+            //    await Context.Response.WriteAsyn(msg.GetMensagem());
+            //});
+            //// ----------------------------------------------------
+
 
             app.UseEndpoints(endpoints =>
             {
