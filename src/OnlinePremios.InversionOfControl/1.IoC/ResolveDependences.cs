@@ -38,14 +38,6 @@ namespace OnlinePremio.InversionOfControl.IoC
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
-            //cria um objeto Scoped, ou seja um objeto que esta associado a requisição
-            //isso significa que se duas pessoas solicitarem o objeto CarrinhoCompra ao  mesmo tempo
-            //elas vão obter instâncias diferentes
-            services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
-
-            //configura o uso da Sessão
-            services.AddMemoryCache();
-            services.AddSession();
 
 
             return services;

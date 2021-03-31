@@ -1,4 +1,6 @@
 using AutoMapper;
+using LanchesMac.Repositories;
+using LanchesMac.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlinePremio.InversionOfControl.IoC;
 using OnlinePremio.Mvc.Configurations;
+using OnlinePremio.Mvc.Models;
 
 namespace OnlinePremio.Mvc
 {
@@ -37,14 +40,44 @@ namespace OnlinePremio.Mvc
             services.AddIdentityConfiguration(Configuration);
             services.AddMyDataContextConfiguration(Configuration);
 
+
+
+            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/Home/AccessDenied");
+            services.Configure<ConfigurationImagens>(Configuration.GetSection("ConfigurationPastaImagens"));
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddMsgMvcConfiguration();
 
             services.AddDistributedMemoryCache();
-            services.AddSession();
+
+
+            services.AddDistributedMemoryCache();
+
+            // Todo: Depois migrar para os locais corretos, fora do Mvc
+            services.AddTransient<ILancheRepository, LancheRepository>();
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<IPedidoRepository, PedidoRepository>();
+
+            //services.AddScoped<RelatorioVendasService>();
+
+            //cria um objeto Scoped, ou seja um objeto que esta associado a requisição
+            //isso significa que se duas pessoas solicitarem o objeto CarrinhoCompra ao  mesmo tempo
+            //elas vão obter instâncias diferentes
+            services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
+
 
             services.AddControllersWithViews();
+            //services.AddPaging(options => {
+            //    options.ViewName = "Bootstrap4";
+            //    options.PageParameterName = "pageindex";
+            //});
+
+            //configura o uso da Sessão
+            services.AddMemoryCache();
+            services.AddSession();
+
+
             services.AddRazorPages();
         }
 
