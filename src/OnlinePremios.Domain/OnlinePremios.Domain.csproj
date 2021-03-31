@@ -8,4 +8,8 @@
     <PackageReference Include="FluentValidation" Version="9.5.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\bcCompra\" />
+  </ItemGroup>
+
 </Project>

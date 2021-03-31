@@ -1,6 +1,8 @@
 ﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using OnlinePremios.Data.Orm;
+using OnlinePremios.Domain.Entities.bcCompra;
 using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Domain.Interfaces.Services;
@@ -31,6 +33,20 @@ namespace OnlinePremio.InversionOfControl.IoC
 
             services.AddScoped<ISorteioRepository, SorteioRepository>();
             services.AddScoped<ISorteioService, SorteioService>();
+
+            //fornece uma instancia de HttpContextAcessor
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
+            //cria um objeto Scoped, ou seja um objeto que esta associado a requisição
+            //isso significa que se duas pessoas solicitarem o objeto CarrinhoCompra ao  mesmo tempo
+            //elas vão obter instâncias diferentes
+            services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
+
+            //configura o uso da Sessão
+            services.AddMemoryCache();
+            services.AddSession();
+
 
             return services;
 

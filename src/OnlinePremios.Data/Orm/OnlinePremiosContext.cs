@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlinePremios.Domain.Entities;
-using System;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace OnlinePremios.Data.Orm
 {
@@ -21,7 +18,9 @@ namespace OnlinePremios.Data.Orm
 
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
-        
+
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

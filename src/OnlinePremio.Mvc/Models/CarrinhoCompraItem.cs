@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlinePremios.Domain.Entities.bcCompra
+namespace OnlinePremio.Mvc.Models
 {
     [Table("CarrinhoCompraItens")]
     public class CarrinhoCompraItem
     {
         public int CarrinhoCompraItemId { get; set; }
-        public CompraItem CompraItem { get; set; }
+        public Lanche Lanche { get; set; }
         public int Quantidade { get; set; }
 
         [StringLength(100)]

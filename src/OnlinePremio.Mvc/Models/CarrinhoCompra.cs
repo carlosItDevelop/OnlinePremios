@@ -1,27 +1,26 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OnlinePremios.Data.Orm;
-using OnlinePremios.Domain.Entities;
-using OnlinePremios.Domain.Entities.bcCompra;
-using OnlinePremios.Domain.Interfaces.Repositories;
-using OnlinePremios.Repository.Base;
+using OnlinePremio.Mvc.Data;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
-namespace OnlinePremios.Repository
+namespace OnlinePremio.Mvc.Models
 {
-  
-    public class CarrinhoCompraRepository : RepositoryGeneric<CarrinhoCompra, Guid>, ICarrinhoCompraRepository
+    public class CarrinhoCompra
     {
-        private readonly OnlinePremiosContext _context;
+        private readonly ApplicationDbContext _context;
 
         //injeta o contexto no construtor
-        public CarrinhoCompraRepository(OnlinePremiosContext contexto) : base(contexto)
+        public CarrinhoCompra(ApplicationDbContext contexto)
         {
             _context = contexto;
         }
 
+        //define as propriedades do Carrinho : Id e os Itens
+        public string CarrinhoCompraId { get; set; }
+        public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 
         public static CarrinhoCompra GetCarrinho(IServiceProvider services)
         {
@@ -30,7 +29,7 @@ namespace OnlinePremios.Repository
                 services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
             //obtem um serviço do tipo do nosso contexto 
-            var context = services.GetService<OnlinePremiosContext>();
+            var context = services.GetService<ApplicationDbContext>();
 
             //obtem ou gera o Id do carrinho
             string carrinhoId = session.GetString("CarrinhoId") ?? Guid.NewGuid().ToString();
@@ -45,7 +44,7 @@ namespace OnlinePremios.Repository
             };
         }
 
-        public void AdicionarAoCarrinho(CompraItem compraItem)
+        public void AdicionarAoCarrinho(Lanche lanche)
         {
             var carrinhoCompraItem =
                     _context.CarrinhoCompraItens.SingleOrDefault(
@@ -68,7 +67,7 @@ namespace OnlinePremios.Repository
             _context.SaveChanges();
         }
 
-        public int RemoverDoCarrinho(CompraItem compraItem)
+        public int RemoverDoCarrinho(Lanche lanche)
         {
             var carrinhoCompraItem =
                     _context.CarrinhoCompraItens.SingleOrDefault(
