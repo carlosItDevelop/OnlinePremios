@@ -1,7 +1,7 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using LanchesMac.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using OnlinePremio.Mvc.Data;
+using OnlinePremio.Mvc.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,9 +9,9 @@ namespace LanchesMac.Repositories
 {
     public class LancheRepository : ILancheRepository
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public LancheRepository(AppDbContext contexto)
+        public LancheRepository(ApplicationDbContext contexto)
         {
             _context = contexto;
         }

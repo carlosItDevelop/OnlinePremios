@@ -10,10 +10,10 @@ namespace LanchesMac.Repositories
 {
     public class PedidoRepository : IPedidoRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly ApplicationDbContext _appDbContext;
         private readonly CarrinhoCompra _carrinhoCompra;
 
-        public PedidoRepository(AppDbContext appDbContext, CarrinhoCompra carrinhoCompra)
+        public PedidoRepository(ApplicationDbContext appDbContext, CarrinhoCompra carrinhoCompra)
         {
             _appDbContext = appDbContext;
             _carrinhoCompra = carrinhoCompra;

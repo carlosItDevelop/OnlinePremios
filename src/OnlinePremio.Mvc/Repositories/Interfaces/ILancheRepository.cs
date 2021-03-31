@@ -1,4 +1,4 @@
-﻿using LanchesMac.Models;
+﻿using OnlinePremio.Mvc.Models;
 using System.Collections.Generic;
 
 namespace LanchesMac.Repositories.Interfaces
