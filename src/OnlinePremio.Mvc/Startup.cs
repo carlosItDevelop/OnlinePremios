@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using OnlinePremio.InversionOfControl.IoC;
 using OnlinePremio.Mvc.Configurations;
 using OnlinePremio.Mvc.Models;
+using OnlinePremios.Areas.Admin.Servicos;
 
 namespace OnlinePremio.Mvc
 {
@@ -59,7 +60,7 @@ namespace OnlinePremio.Mvc
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
             services.AddTransient<IPedidoRepository, PedidoRepository>();
 
-            //services.AddScoped<RelatorioVendasService>();
+            services.AddScoped<RelatorioVendasService>();
 
             //cria um objeto Scoped, ou seja um objeto que esta associado a requisição
             //isso significa que se duas pessoas solicitarem o objeto CarrinhoCompra ao  mesmo tempo
