@@ -107,21 +107,26 @@ namespace OnlinePremio.Mvc
 
             app.UseGlobalizationConfig();
 
-            ////
-            //app.UseSession();
-            //app.Run(async(context)) =>{
-            //    await Context.Response.WriteAsyn(msg.GetMensagem());
-            //});
-            //// ----------------------------------------------------
-
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "AdminArea",
+                    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(name: "categoriaFiltro",
+                   pattern: "Lanche/{action}/{categoria?}",
+                   defaults: new { Controller = "Lanche", action = "List" });
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapRazorPages();
+
+
             });
+
         }
     }
 }
