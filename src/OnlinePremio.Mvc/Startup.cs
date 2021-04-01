@@ -10,6 +10,7 @@ using OnlinePremios.InversionOfControl.IoC;
 using OnlinePremios.Mvc.Configurations;
 using OnlinePremios.Mvc.Models;
 using OnlinePremios.Areas.Admin.Servicos;
+using ReflectionIT.Mvc.Paging;
 
 namespace OnlinePremios.Mvc
 {
@@ -69,10 +70,11 @@ namespace OnlinePremios.Mvc
 
 
             services.AddControllersWithViews();
-            //services.AddPaging(options => {
-            //    options.ViewName = "Bootstrap4";
-            //    options.PageParameterName = "pageindex";
-            //});
+            services.AddPaging(options =>
+            {
+                options.ViewName = "Bootstrap4";
+                options.PageParameterName = "pageindex";
+            });
 
             //configura o uso da Sessão
             services.AddMemoryCache();

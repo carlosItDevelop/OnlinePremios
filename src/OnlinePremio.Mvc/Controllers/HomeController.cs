@@ -7,12 +7,10 @@ namespace OnlinePremios.Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ILancheRepository _lancheRepository;
 
-        public HomeController(ILogger<HomeController> logger, ILancheRepository lancheRepository)
+        public HomeController(ILancheRepository lancheRepository)
         {
-            _logger = logger;
             _lancheRepository = lancheRepository;
         }
 
