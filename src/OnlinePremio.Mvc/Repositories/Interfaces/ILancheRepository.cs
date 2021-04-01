@@ -1,7 +1,7 @@
 ﻿using OnlinePremio.Mvc.Models;
 using System.Collections.Generic;
 
-namespace LanchesMac.Repositories.Interfaces
+namespace OnlinePremio.Repositories.Interfaces
 {
     public interface ILancheRepository
     {

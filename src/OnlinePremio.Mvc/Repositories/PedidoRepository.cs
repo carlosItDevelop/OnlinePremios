@@ -1,12 +1,12 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlinePremio.Mvc.Data;
+using OnlinePremio.Mvc.Models;
+using OnlinePremio.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LanchesMac.Repositories
+namespace OnlinePremio.Repositories
 {
     public class PedidoRepository : IPedidoRepository
     {

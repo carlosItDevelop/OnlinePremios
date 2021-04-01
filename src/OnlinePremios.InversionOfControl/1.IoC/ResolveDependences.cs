@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using OnlinePremios.Data.Orm;
-using OnlinePremios.Domain.Entities.bcCompra;
 using OnlinePremios.Domain.Interfaces.Notify;
 using OnlinePremios.Domain.Interfaces.Repositories;
 using OnlinePremios.Domain.Interfaces.Services;

@@ -1,6 +1,6 @@
 using AutoMapper;
-using LanchesMac.Repositories;
-using LanchesMac.Repositories.Interfaces;
+using OnlinePremio.Repositories;
+using OnlinePremio.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

@@ -1,11 +1,11 @@
-﻿using LanchesMac.Repositories.Interfaces;
+﻿using OnlinePremio.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using OnlinePremio.Mvc.Data;
 using OnlinePremio.Mvc.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LanchesMac.Repositories
+namespace OnlinePremio.Repositories
 {
     public class LancheRepository : ILancheRepository
     {

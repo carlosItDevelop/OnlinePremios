@@ -1,9 +1,9 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using OnlinePremio.Repositories.Interfaces;
+using OnlinePremio.Mvc.Data;
+using OnlinePremio.Mvc.Models;
 using System.Collections.Generic;
 
-namespace LanchesMac.Repositories
+namespace OnlinePremio.Repositories
 {
     public class CategoriaRepository : ICategoriaRepository
     {
