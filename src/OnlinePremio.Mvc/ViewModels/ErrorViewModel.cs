@@ -1,4 +1,4 @@
-﻿namespace OnlinePremio.Mvc.ViewModels
+﻿namespace OnlinePremios.Mvc.ViewModels
 {
     public class ErrorViewModel
     {

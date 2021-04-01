@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System;
 
-namespace OnlinePremio.Mvc.Extensions
+namespace OnlinePremios.Mvc.Extensions
 {
     public static class RazorExtensions
     {

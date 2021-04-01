@@ -9,7 +9,7 @@ using OnlinePremios.Domain.Notifications;
 using OnlinePremios.Domain.Services;
 using OnlinePremios.Repository;
 
-namespace OnlinePremio.InversionOfControl.IoC
+namespace OnlinePremios.InversionOfControl.IoC
 {
     public static class ResolveDependences
     {

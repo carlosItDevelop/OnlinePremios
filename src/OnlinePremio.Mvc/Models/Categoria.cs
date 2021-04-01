@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlinePremio.Mvc.Models
+namespace OnlinePremios.Mvc.Models
 {
     [Table("Categorias")]
     public class Categoria

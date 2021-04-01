@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace OnlinePremio.Mvc.Areas.Identity.Pages.Account
+namespace OnlinePremios.Mvc.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ResetPasswordConfirmationModel : PageModel

@@ -2,7 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>aspnet-OnlinePremio.Mvc-EA833E6D-5177-4507-A2FA-5AA7DB625FF1</UserSecretsId>
+    <UserSecretsId>aspnet-OnlinePremios.Mvc-EA833E6D-5177-4507-A2FA-5AA7DB625FF1</UserSecretsId>
+    <AssemblyName>OnlinePremios.Mvc</AssemblyName>
+    <RootNamespace>OnlinePremios.Mvc</RootNamespace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <ItemGroup>

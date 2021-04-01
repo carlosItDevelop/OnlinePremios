@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Localization;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace OnlinePremio.Mvc.Configurations
+namespace OnlinePremios.Mvc.Configurations
 {
     public static class GlobalizationConfig
     {

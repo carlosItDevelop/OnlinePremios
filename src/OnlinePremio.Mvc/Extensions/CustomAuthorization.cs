@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using System.Linq;
 using System.Security.Claims;
 
-namespace OnlinePremio.Mvc.Extensions
+namespace OnlinePremios.Mvc.Extensions
 {
     public class CustomAuthorization
     {

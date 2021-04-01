@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlinePremios.Domain.Interfaces.Notify;
 
-namespace OnlinePremio.Mvc.Controllers
+namespace OnlinePremios.Mvc.Controllers
 {
     public abstract class BaseController : Controller
     {

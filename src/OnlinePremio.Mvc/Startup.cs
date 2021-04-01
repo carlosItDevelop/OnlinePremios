@@ -1,17 +1,17 @@
 using AutoMapper;
-using OnlinePremio.Repositories;
-using OnlinePremio.Repositories.Interfaces;
+using OnlinePremios.Repositories;
+using OnlinePremios.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using OnlinePremio.InversionOfControl.IoC;
-using OnlinePremio.Mvc.Configurations;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.InversionOfControl.IoC;
+using OnlinePremios.Mvc.Configurations;
+using OnlinePremios.Mvc.Models;
 using OnlinePremios.Areas.Admin.Servicos;
 
-namespace OnlinePremio.Mvc
+namespace OnlinePremios.Mvc
 {
     public class Startup
     {

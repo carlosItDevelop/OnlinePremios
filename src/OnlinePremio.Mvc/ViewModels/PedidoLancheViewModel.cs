@@ -1,4 +1,4 @@
-﻿using OnlinePremio.Mvc.Models;
+﻿using OnlinePremios.Mvc.Models;
 using System.Collections.Generic;
 
 namespace LanchesMac.ViewModels

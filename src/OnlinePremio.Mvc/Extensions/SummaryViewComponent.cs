@@ -2,7 +2,7 @@
 using OnlinePremios.Domain.Interfaces.Notify;
 using System.Threading.Tasks;
 
-namespace OnlinePremio.Mvc.Extensions
+namespace OnlinePremios.Mvc.Extensions
 {
     public class SummaryViewComponent : ViewComponent
     {

@@ -1,11 +1,11 @@
-﻿using OnlinePremio.Repositories.Interfaces;
+﻿using OnlinePremios.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Data;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.Mvc.Data;
+using OnlinePremios.Mvc.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnlinePremio.Repositories
+namespace OnlinePremios.Repositories
 {
     public class LancheRepository : ILancheRepository
     {

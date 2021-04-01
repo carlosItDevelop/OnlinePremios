@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace OnlinePremio.Mvc.Migrations
+namespace OnlinePremios.Mvc.Migrations
 {
     public partial class initial : Migration
     {

@@ -1,7 +1,7 @@
-﻿using OnlinePremio.Mvc.Models;
+﻿using OnlinePremios.Mvc.Models;
 using System.Collections.Generic;
 
-namespace OnlinePremio.Repositories.Interfaces
+namespace OnlinePremios.Repositories.Interfaces
 {
     public interface IPedidoRepository
     {

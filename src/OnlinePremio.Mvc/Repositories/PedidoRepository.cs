@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Data;
-using OnlinePremio.Mvc.Models;
-using OnlinePremio.Repositories.Interfaces;
+using OnlinePremios.Mvc.Data;
+using OnlinePremios.Mvc.Models;
+using OnlinePremios.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnlinePremio.Repositories
+namespace OnlinePremios.Repositories
 {
     public class PedidoRepository : IPedidoRepository
     {

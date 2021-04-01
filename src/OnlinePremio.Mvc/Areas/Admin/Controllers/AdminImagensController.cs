@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.Mvc.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

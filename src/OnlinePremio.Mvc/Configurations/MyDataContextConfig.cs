@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OnlinePremios.Data.Orm;
 
-namespace OnlinePremio.Mvc.Configurations
+namespace OnlinePremios.Mvc.Configurations
 {
     public static class MyDataContextConfig
     {

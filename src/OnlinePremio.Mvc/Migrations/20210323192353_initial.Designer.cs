@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OnlinePremio.Mvc.Data;
+using OnlinePremios.Mvc.Data;
 
-namespace OnlinePremio.Mvc.Migrations
+namespace OnlinePremios.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210323192353_initial")]

@@ -5,7 +5,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
-namespace OnlinePremio.Mvc.Extensions
+namespace OnlinePremios.Mvc.Extensions
 {
     public class MoedaAttribute : ValidationAttribute
     {

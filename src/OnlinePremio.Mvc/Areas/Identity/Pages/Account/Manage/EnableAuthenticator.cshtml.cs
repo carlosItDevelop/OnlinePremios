@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace OnlinePremio.Mvc.Areas.Identity.Pages.Account.Manage
+namespace OnlinePremios.Mvc.Areas.Identity.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {
@@ -148,7 +148,7 @@ namespace OnlinePremio.Mvc.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("OnlinePremio.Mvc"),
+                _urlEncoder.Encode("OnlinePremios.Mvc"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

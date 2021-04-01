@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlinePremio.Mvc", "src\OnlinePremio.Mvc\OnlinePremio.Mvc.csproj", "{C3834403-D8D9-4914-9C45-2F80D0169FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlinePremios.Mvc", "src\OnlinePremio.Mvc\OnlinePremios.Mvc.csproj", "{C3834403-D8D9-4914-9C45-2F80D0169FC3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Infra", "3.Infra", "{EC94715D-CB98-4755-A062-5F61C8E76A4B}"
 EndProject
@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlinePremios.Domain", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.CrossCutting", "3.CrossCutting", "{6620B869-B65E-4BB9-933C-20A52F3EB80C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePremios.InversionOfControl", "src\OnlinePremios.InversionOfControl\OnlinePremios.InversionOfControl.csproj", "{7CDE46C5-4AEA-4A28-8C4B-89C55AFA5CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlinePremios.InversionOfControl", "src\OnlinePremios.InversionOfControl\OnlinePremios.InversionOfControl.csproj", "{7CDE46C5-4AEA-4A28-8C4B-89C55AFA5CAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

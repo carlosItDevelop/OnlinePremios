@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace OnlinePremio.Mvc.Models
+namespace OnlinePremios.Mvc.Models
 {
     public class FileManagerModel
     {

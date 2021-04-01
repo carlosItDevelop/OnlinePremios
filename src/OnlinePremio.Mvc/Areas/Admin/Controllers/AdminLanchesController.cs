@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Data;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.Mvc.Data;
+using OnlinePremios.Mvc.Models;
 using ReflectionIT.Mvc.Paging;
 using System.Linq;
 using System.Threading.Tasks;

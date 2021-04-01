@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace OnlinePremio.Mvc.ViewModels
+namespace OnlinePremios.Mvc.ViewModels
 {
     /// <summary>
     /// Todo: Preciso definir as raizes de agregações

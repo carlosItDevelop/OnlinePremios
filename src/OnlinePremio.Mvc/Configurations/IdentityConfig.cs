@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OnlinePremio.Mvc.Data;
+using OnlinePremios.Mvc.Data;
 
-namespace OnlinePremio.Mvc.Configurations
+namespace OnlinePremios.Mvc.Configurations
 {
     public static class IdentityConfig
     {

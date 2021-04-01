@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace OnlinePremio.Mvc.Configurations
+namespace OnlinePremios.Mvc.Configurations
 {
 
     public static class MsgMvcConfig

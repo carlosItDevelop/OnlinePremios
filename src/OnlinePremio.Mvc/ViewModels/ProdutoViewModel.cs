@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace OnlinePremio.Mvc.ViewModels
+namespace OnlinePremios.Mvc.ViewModels
 {
     public class ProdutoViewModel
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlinePremio.Mvc.Models
+namespace OnlinePremios.Mvc.Models
 {
     public class ConfigurationImagens
     {

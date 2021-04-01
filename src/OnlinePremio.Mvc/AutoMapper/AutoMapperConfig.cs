@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using OnlinePremio.Mvc.ViewModels;
+using OnlinePremios.Mvc.ViewModels;
 using OnlinePremios.Domain.Entities;
 
-namespace OnlinePremio.Mvc.AutoMapper
+namespace OnlinePremios.Mvc.AutoMapper
 {
     public class AutoMapperConfig : Profile
     {

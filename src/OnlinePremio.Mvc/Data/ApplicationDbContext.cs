@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.Mvc.Models;
 using System.Linq;
 
-namespace OnlinePremio.Mvc.Data
+namespace OnlinePremios.Mvc.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

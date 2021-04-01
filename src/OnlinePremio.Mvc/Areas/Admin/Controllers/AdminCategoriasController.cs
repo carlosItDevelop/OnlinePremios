@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Data;
-using OnlinePremio.Mvc.Models;
+using OnlinePremios.Mvc.Data;
+using OnlinePremios.Mvc.Models;
 using System.Linq;
 using System.Threading.Tasks;
 

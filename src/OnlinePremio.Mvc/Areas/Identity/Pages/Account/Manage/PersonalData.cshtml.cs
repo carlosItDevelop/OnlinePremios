@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace OnlinePremio.Mvc.Areas.Identity.Pages.Account.Manage
+namespace OnlinePremios.Mvc.Areas.Identity.Pages.Account.Manage
 {
     public class PersonalDataModel : PageModel
     {

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using OnlinePremio.Mvc.Data;
+using OnlinePremios.Mvc.Data;
 using OnlinePremios.Domain.Entities;
 
-namespace OnlinePremio.Mvc.Controllers
+namespace OnlinePremios.Mvc.Controllers
 {
     public class CotaController : Controller
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OnlinePremio.Mvc.ViewModels;
+using OnlinePremios.Mvc.ViewModels;
 
-namespace OnlinePremio.Mvc.Controllers
+namespace OnlinePremios.Mvc.Controllers
 {
     [Authorize]
     public class HomeController : Controller

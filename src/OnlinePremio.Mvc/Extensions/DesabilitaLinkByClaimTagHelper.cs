@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 
-namespace OnlinePremio.Mvc.Extensions
+namespace OnlinePremios.Mvc.Extensions
 {
     [HtmlTargetElement("*", Attributes = "disable-by-claim-name")]
     [HtmlTargetElement("*", Attributes = "disable-by-claim-value")]

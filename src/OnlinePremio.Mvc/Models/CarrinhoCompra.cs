@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OnlinePremio.Mvc.Data;
+using OnlinePremios.Mvc.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnlinePremio.Mvc.Models
+namespace OnlinePremios.Mvc.Models
 {
     public class CarrinhoCompra
     {
