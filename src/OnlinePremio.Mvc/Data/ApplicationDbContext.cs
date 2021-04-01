@@ -22,19 +22,19 @@ namespace OnlinePremios.Mvc.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //// onde não tiver setado varchar e a propriedade for 
-            //// do tipo string fica valendo varchar(100)
+            // onde não tiver setado varchar e a propriedade for 
+            // do tipo string fica valendo varchar(100)
 
-            //foreach (var property in modelBuilder.Model.GetEntityTypes()
-            //    .SelectMany(e => e.GetProperties()
-            //        .Where(p => p.ClrType == typeof(string))))
-            //{
-            //    property.SetColumnType("varchar(90)");  // Ok: Faltava instalar o Microsoft.EntityFrameworkCore.Relational
-            //    //property.Relational().ColumnType = "varchar(100)"; Até ANC2.x
-            //}
+            foreach (var property in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetProperties()
+                    .Where(p => p.ClrType == typeof(string))))
+            {
+                property.SetColumnType("varchar(90)");  // Ok: Faltava instalar o Microsoft.EntityFrameworkCore.Relational
+                //property.Relational().ColumnType = "varchar(100)"; Até ANC2.x
+            }
 
             // Posso pegar arquivo por arquivo ou usar a implementação Impl033;
-            //modelBuilder.ApplyConfiguration(new PacienteMap());
+            // modelBuilder.ApplyConfiguration(new PacienteMap());
             // Impl033: Busca os Mapppings de uma vez só
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
