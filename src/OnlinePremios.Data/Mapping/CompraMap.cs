@@ -16,7 +16,7 @@ namespace OnlinePremios.Data.Mapping
             builder.Property(x => x.QtdeCotas).HasColumnName("QtdeCotas").IsRequired();
 
             // Todo: Acertar, pois Cota não participa mais de Compra e sim de Sorteio. 
-            // Todo: Em Compra, agora, temos CompraItem, que vai herdar de Cota.
+            // Todo: Em Compra, agora, temos CotaItem, que vai herdar de Cota.
 
             //// 1:N Cotas
             //builder.HasMany(x => x.Cotas)

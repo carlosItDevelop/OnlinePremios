@@ -2,7 +2,7 @@
 
 namespace OnlinePremios.Domain.Entities.Validations
 {
-    public class CompraItemValidation : AbstractValidator<CompraItem>
+    public class CompraItemValidation : AbstractValidator<CotaItem>
     {
         public CompraItemValidation()
         {

@@ -3,9 +3,9 @@ using System;
 
 namespace OnlinePremios.Domain.Entities
 {
-    public class CompraItem : EntityBase
+    public class CotaItem : EntityBase
     {
-        public CompraItem(int numero, decimal valor, Guid compraId)
+        public CotaItem(int numero, decimal valor, Guid compraId)
         {
             this.Numero = numero;
             this.Valor = valor;
@@ -13,7 +13,7 @@ namespace OnlinePremios.Domain.Entities
         }
 
         // to EF
-        public CompraItem() { }
+        public CotaItem() { }
 
         public int Numero { get; set; }
         public decimal Valor { get; set; }

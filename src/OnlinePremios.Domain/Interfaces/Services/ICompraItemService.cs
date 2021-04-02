@@ -6,8 +6,8 @@ namespace OnlinePremios.Domain.Interfaces.Services
 {
     public interface ICompraItemService : IDisposable
     {
-        Task Adicionar(CompraItem compraItem);
-        Task Atualizar(CompraItem compraItem);
+        Task Adicionar(CotaItem compraItem);
+        Task Atualizar(CotaItem compraItem);
         Task Remover(Guid id);
     }
 }

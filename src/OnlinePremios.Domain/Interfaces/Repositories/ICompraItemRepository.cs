@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Domain.Interfaces.Repositories
 {
-    public interface ICompraItemRepository : IGenericRepository<CompraItem, Guid>
+    public interface ICompraItemRepository : IGenericRepository<CotaItem, Guid>
     {
-        Task<IEnumerable<CompraItem>> ObterTodasOsCompraItemsDeUmaCompra(Guid compraId);
-        Task<IEnumerable<CompraItem>> ObterTodasOsCompraItemsComSuasCompras();
-        Task<CompraItem> ObterUmCompraItemComSuaCompra(Guid id);
+        Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsDeUmaCompra(Guid compraId);
+        Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsComSuasCompras();
+        Task<CotaItem> ObterUmCompraItemComSuaCompra(Guid id);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LanchesMac.ViewModels
 {
-    // Todo: Trocar Lanche por CompraItem (e depois refatorar de CompraItem para CotaItens)
+    // Todo: Trocar Lanche por CotaItem (e depois refatorar de CotaItem para CotaItens)
 
     public class LancheListViewModel
     {

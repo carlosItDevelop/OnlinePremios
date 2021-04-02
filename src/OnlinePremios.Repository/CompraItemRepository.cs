@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
 {
-    public class CompraItemRepository : RepositoryGeneric<CompraItem, Guid>, ICompraItemRepository
+    public class CompraItemRepository : RepositoryGeneric<CotaItem, Guid>, ICompraItemRepository
     {
 
         private readonly OnlinePremiosContext _ctx;
@@ -18,19 +18,19 @@ namespace OnlinePremios.Repository
             this._ctx = context;
         }
 
-        public async Task<IEnumerable<CompraItem>> ObterTodasOsCompraItemsComSuasCompras()
+        public async Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsComSuasCompras()
         {
             // Todo Implementar ObterTodasOsCompraItemsComSuasCompras
             return null;
         }
 
-        public async Task<IEnumerable<CompraItem>> ObterTodasOsCompraItemsDeUmaCompra(Guid compraId)
+        public async Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsDeUmaCompra(Guid compraId)
         {
             // Todo Implementar ObterTodasOsCompraItemsDeUmaCompra
             return null;
         }
 
-        public async Task<CompraItem> ObterUmCompraItemComSuaCompra(Guid id)
+        public async Task<CotaItem> ObterUmCompraItemComSuaCompra(Guid id)
         {
             // Todo Implementar ObterUmCompraItemComSuaCompra
             return null;
