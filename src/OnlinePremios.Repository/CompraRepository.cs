@@ -22,7 +22,7 @@ namespace OnlinePremios.Repository
 
         public async Task<IEnumerable<Compra>> ObterTodasAsComprasComSeusItens()
         {
-            return await _ctx.Compra.AsNoTracking().Include(f => f.CompraItens).ToListAsync();
+            return await _ctx.Compra.AsNoTracking().Include(f => f.CotaItens).ToListAsync();
         }
 
         public async Task<IEnumerable<Compra>> ObterTodasAsComprasDeUmCliente(Guid clienteId)

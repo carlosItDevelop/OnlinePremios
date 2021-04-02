@@ -17,7 +17,7 @@ namespace OnlinePremios.Data.Mapping
 
             // 1:N Compras : CotaItem
             builder.HasOne(x => x.Compra)
-                .WithMany(x => x.CompraItens)
+                .WithMany(x => x.CotaItens)
                 .HasForeignKey(x => x.CompraId);
         }
     }

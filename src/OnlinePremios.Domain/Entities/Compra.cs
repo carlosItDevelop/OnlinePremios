@@ -31,7 +31,7 @@ namespace OnlinePremios.Domain.Entities
         public virtual Cliente Cliente { get; set; }
 
         // Collections
-        public IEnumerable<CotaItem> CompraItens { get; set; }
+        public IEnumerable<CotaItem> CotaItens { get; set; }
 
 
     }
