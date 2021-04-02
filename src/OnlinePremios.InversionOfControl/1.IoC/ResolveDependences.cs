@@ -33,11 +33,12 @@ namespace OnlinePremios.InversionOfControl.IoC
             services.AddScoped<ISorteioRepository, SorteioRepository>();
             services.AddScoped<ISorteioService, SorteioService>();
 
+            // Todo: Not is use. I need implement
             services.AddScoped<ICotaItemRepository, CotaItemRepository>();
             services.AddScoped<ICotaItemService, CotaItemService>();
 
 
-            //fornece uma instancia de HttpContextAcessor
+            // fornece uma instancia de HttpContextAcessor
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
