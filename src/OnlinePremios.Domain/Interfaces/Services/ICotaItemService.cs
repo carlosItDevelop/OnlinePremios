@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Domain.Interfaces.Services
 {
-    public interface ICompraItemService : IDisposable
+    public interface ICotaItemService : IDisposable
     {
         Task Adicionar(CotaItem compraItem);
         Task Atualizar(CotaItem compraItem);

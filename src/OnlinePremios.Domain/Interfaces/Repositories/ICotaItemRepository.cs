@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Domain.Interfaces.Repositories
 {
-    public interface ICompraItemRepository : IGenericRepository<CotaItem, Guid>
+    public interface ICotaItemRepository : IGenericRepository<CotaItem, Guid>
     {
         Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsDeUmaCompra(Guid compraId);
         Task<IEnumerable<CotaItem>> ObterTodasOsCompraItemsComSuasCompras();

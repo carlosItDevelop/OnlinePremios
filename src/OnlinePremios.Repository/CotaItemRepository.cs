@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace OnlinePremios.Repository
 {
-    public class CompraItemRepository : RepositoryGeneric<CotaItem, Guid>, ICompraItemRepository
+    public class CotaItemRepository : RepositoryGeneric<CotaItem, Guid>, ICotaItemRepository
     {
 
         private readonly OnlinePremiosContext _ctx;
 
-        public CompraItemRepository(OnlinePremiosContext context) : base(context)
+        public CotaItemRepository(OnlinePremiosContext context) : base(context)
         {
             this._ctx = context;
         }

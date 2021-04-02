@@ -4,7 +4,7 @@ using OnlinePremios.Domain.Entities;
 
 namespace OnlinePremios.Data.Mapping
 {
-    public class CompraItemMap : IEntityTypeConfiguration<CotaItem>
+    public class CotaItemMap : IEntityTypeConfiguration<CotaItem>
     {
         public void Configure(EntityTypeBuilder<CotaItem> builder)
         {

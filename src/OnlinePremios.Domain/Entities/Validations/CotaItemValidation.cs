@@ -2,9 +2,9 @@
 
 namespace OnlinePremios.Domain.Entities.Validations
 {
-    public class CompraItemValidation : AbstractValidator<CotaItem>
+    public class CotaItemValidation : AbstractValidator<CotaItem>
     {
-        public CompraItemValidation()
+        public CotaItemValidation()
         {
             RuleFor(f => f.Numero)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");

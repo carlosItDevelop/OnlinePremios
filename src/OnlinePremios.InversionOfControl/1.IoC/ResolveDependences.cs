@@ -33,6 +33,10 @@ namespace OnlinePremios.InversionOfControl.IoC
             services.AddScoped<ISorteioRepository, SorteioRepository>();
             services.AddScoped<ISorteioService, SorteioService>();
 
+            services.AddScoped<ICotaItemRepository, CotaItemRepository>();
+            services.AddScoped<ICotaItemService, CotaItemService>();
+
+
             //fornece uma instancia de HttpContextAcessor
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
