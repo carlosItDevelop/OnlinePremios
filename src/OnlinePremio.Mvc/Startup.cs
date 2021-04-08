@@ -54,8 +54,6 @@ namespace OnlinePremios.Mvc
             services.AddDistributedMemoryCache();
 
 
-            services.AddDistributedMemoryCache();
-
             // Todo: Depois migrar para os locais corretos, fora do Mvc
             services.AddTransient<ILancheRepository, LancheRepository>();
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
