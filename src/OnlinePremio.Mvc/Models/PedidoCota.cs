@@ -3,7 +3,7 @@ using System;
 
 namespace OnlinePremios.Mvc.Models
 {
-    public class PedidoCota : EntityBase
+    public class PedidoCota
     {
         public PedidoCota(int numero, decimal valor, int pedidoId)
         {
