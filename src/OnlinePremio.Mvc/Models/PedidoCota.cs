@@ -1,25 +1,29 @@
 ﻿using OnlinePremios.Domain.Core;
 using System;
 
-namespace OnlinePremios.Domain.Entities
+namespace OnlinePremios.Mvc.Models
 {
-    public class CotaItem : EntityBase
+    public class PedidoCota : EntityBase
     {
-        public CotaItem(int numero, decimal valor, Guid compraId)
+        public PedidoCota(int numero, decimal valor, int pedidoId)
         {
             this.Numero = numero;
             this.Valor = valor;
-            this.CompraId = compraId;
+            this.PedidoId = pedidoId;
         }
 
         // to EF
-        public CotaItem() { }
+        public PedidoCota() { }
+
+        public int PedidoCotaId { get; set; }
 
         public int Numero { get; set; }
         public decimal Valor { get; set; }
-        public Guid CompraId { get; set; }
 
-        public virtual Compra Compra { get; set; }
+        // Todo: Não tem no Lanche
+        public int PedidoId { get; set; }
+
+        public virtual Pedido Pedido { get; set; }
 
     }
 }

@@ -12,6 +12,7 @@ namespace OnlinePremios.Domain.Entities.Validations
             RuleFor(f => f.CompraId)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
+
         }
     }
 }
